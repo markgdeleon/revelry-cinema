@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
+import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 
 const filmsData = {
   "lila-exe": {
@@ -21,11 +22,11 @@ const filmsData = {
     title: "The Handy Man",
     year: "Coming Soon",
     releaseDate: "TBA",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "Coming Soon",
-    heroImage: "",
+    director: "Chris Soriano",
+    writer: "Chris Soriano",
+    starring: ["Chris Soriano", "Jaime Gray"],
+    synopsis: "",
+    heroImage: handyManHeroImage,
     posters: []
   },
   "red-light-teachers": {
