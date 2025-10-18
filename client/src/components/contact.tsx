@@ -1,26 +1,24 @@
-import { Mail } from "lucide-react";
 import { SiInstagram, SiFacebook, SiTiktok, SiX } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 border-t border-border">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="font-serif text-4xl sm:text-5xl font-bold mb-8">
-          Get in Touch
+    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-xl font-medium mb-6">
+          Contact
         </h2>
         
-        <div className="space-y-6">
+        <div className="space-y-4">
           <a 
             href="mailto:hello@revelrycinema.com"
-            className="inline-flex items-center gap-3 text-xl text-muted-foreground hover:text-foreground transition-colors"
+            className="block text-base text-muted-foreground hover:text-foreground transition-colors"
             data-testid="link-email"
           >
-            <Mail className="w-6 h-6" />
             hello@revelrycinema.com
           </a>
           
-          <div className="flex items-center justify-center gap-2 pt-4">
+          <div className="flex items-center gap-2 pt-2">
             <a 
               href="https://www.instagram.com/revelry_cinema" 
               target="_blank" 
