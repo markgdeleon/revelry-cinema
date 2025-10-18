@@ -120,7 +120,7 @@ export default function FilmDetail() {
           </div>
         )}
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 relative z-10">
           <Link href="/">
             <Button 
               variant="ghost" 
