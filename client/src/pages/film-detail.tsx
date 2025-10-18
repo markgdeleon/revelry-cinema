@@ -12,7 +12,7 @@ const filmsData = {
     director: "Kyle Tims",
     writer: "Kyle Tims",
     starring: [],
-    synopsis: "Coming Soon",
+    synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
     heroImage: "",
     posters: []
   },
@@ -171,7 +171,7 @@ export default function FilmDetail() {
 
           {film.synopsis && (
             <div className="mb-16">
-              <h6 className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Synopsis</h6>
+              <h6 className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Logline</h6>
               <p className="text-xl leading-relaxed max-w-3xl" data-testid="text-synopsis">
                 {film.synopsis}
               </p>
