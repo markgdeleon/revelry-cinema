@@ -121,16 +121,15 @@ export default function FilmDetail() {
         )}
 
         <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 relative z-10">
-          <Link href="/">
-            <Button 
-              variant="ghost" 
-              className="mb-8 -ml-4"
-              data-testid="button-back"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Films
-            </Button>
-          </Link>
+          <Button 
+            variant="ghost" 
+            className="mb-8 -ml-4"
+            data-testid="button-back"
+            onClick={() => window.location.href = '/'}
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Films
+          </Button>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
             <div>
