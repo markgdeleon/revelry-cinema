@@ -3,6 +3,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
 
 const filmsData = {
   "lila-exe": {
@@ -13,7 +14,7 @@ const filmsData = {
     writer: "Mark De Leon",
     starring: [],
     synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
-    heroImage: "",
+    heroImage: lilaHeroImage,
     posters: []
   },
   "the-handy-man": {
