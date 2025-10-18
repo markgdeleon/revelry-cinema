@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Search } from "lucide-react";
+import logo from "@assets/2_1760762996019.png";
 
 export function Navigation() {
   const scrollToSection = (id: string) => {
@@ -32,10 +33,14 @@ export function Navigation() {
           
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-white text-sm font-medium tracking-widest hover:opacity-70 transition-opacity"
+            className="hover:opacity-70 transition-opacity"
             data-testid="link-home"
           >
-            REVELRY CINEMA
+            <img 
+              src={logo} 
+              alt="Revelry Cinema" 
+              className="h-8 w-auto"
+            />
           </button>
           
           <Button 
