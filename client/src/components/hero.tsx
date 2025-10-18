@@ -1,13 +1,14 @@
+import { Link } from "wouter";
 import heroImage from "@assets/Stills_1.1.1_1.13.1_1760764423350.jpg";
 
 const films = [
-  { title: "Lila.exe", year: "Coming Soon" },
-  { title: "The Handy Man", year: "Coming Soon" },
-  { title: "Red Light Teachers", year: "2025" },
-  { title: "Revelry", year: "2024" },
-  { title: "The Master Chief", year: "2023" },
-  { title: "Summer Jazz", year: "2022" },
-  { title: "Anita", year: "2021" },
+  { title: "Lila.exe", year: "Coming Soon", slug: "lila-exe" },
+  { title: "The Handy Man", year: "Coming Soon", slug: "the-handy-man" },
+  { title: "Red Light Teachers", year: "2025", slug: "red-light-teachers" },
+  { title: "Revelry", year: "2024", slug: "revelry" },
+  { title: "The Master Chief", year: "2023", slug: "the-master-chief" },
+  { title: "Summer Jazz", year: "2022", slug: "summer-jazz" },
+  { title: "Anita", year: "2021", slug: "anita" },
 ];
 
 export function Hero() {
@@ -22,18 +23,22 @@ export function Hero() {
       <div className="relative z-10 px-8 sm:px-12 lg:px-16 pt-56 md:pt-64 lg:pt-72 pb-32 w-full">
         <div className="space-y-1">
           {films.map((film, index) => (
-            <div 
+            <Link 
               key={index}
-              className="flex items-baseline gap-4 group cursor-pointer"
-              data-testid={`film-${index}`}
+              href={`/films/${film.slug}`}
             >
-              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight group-hover:opacity-70 transition-opacity">
-                {film.title}
-              </h2>
-              <span className="text-white/60 text-lg sm:text-xl md:text-2xl">
-                {film.year}
-              </span>
-            </div>
+              <div 
+                className="flex items-baseline gap-4 group cursor-pointer"
+                data-testid={`film-${index}`}
+              >
+                <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight group-hover:opacity-70 transition-opacity">
+                  {film.title}
+                </h2>
+                <span className="text-white/60 text-lg sm:text-xl md:text-2xl">
+                  {film.year}
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
