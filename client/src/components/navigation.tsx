@@ -39,7 +39,7 @@ export function Navigation() {
             <img 
               src={logo} 
               alt="Revelry Cinema" 
-              className="h-20 w-auto"
+              className="h-24 sm:h-32 md:h-40 lg:h-48 w-auto"
             />
           </button>
           
