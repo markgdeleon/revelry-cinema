@@ -120,10 +120,10 @@ export default function FilmDetail() {
           </div>
         )}
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 relative z-50">
           <Button 
             variant="ghost" 
-            className="mb-8 -ml-4"
+            className="mb-8 -ml-4 relative z-50"
             data-testid="button-back"
             onClick={() => window.location.href = '/'}
           >
