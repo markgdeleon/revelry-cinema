@@ -1,4 +1,4 @@
-import heroImage from "@assets/generated_images/Cinematic_film_production_hero_background_ac1e8d0b.png";
+import heroImage from "@assets/Stills_1.1.1_1.13.1_1760764423350.jpg";
 
 const films = [
   { title: "Golden Hour", year: "2025" },
