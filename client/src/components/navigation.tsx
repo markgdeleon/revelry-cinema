@@ -32,7 +32,13 @@ export function Navigation() {
           </Button>
           
           <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={() => {
+              if (window.location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              } else {
+                window.location.href = '/';
+              }
+            }}
             className="hover:opacity-70 transition-opacity -mt-2"
             data-testid="link-home"
           >
