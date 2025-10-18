@@ -12,7 +12,7 @@ const filmsData = {
     releaseDate: "TBA",
     director: "Mark De Leon",
     writer: "Mark De Leon",
-    starring: [],
+    starring: ["Nadine Lustre", "Yassi Pressman"],
     synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
     heroImage: lilaHeroImage,
     posters: []
