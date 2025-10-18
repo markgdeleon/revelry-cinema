@@ -3,16 +3,16 @@ import { Button } from "@/components/ui/button";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 border-t border-border">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-xl font-medium mb-6">
+    <section id="contact" className="py-24 px-8 sm:px-12 lg:px-16 bg-background border-t border-border">
+      <div className="max-w-4xl">
+        <h2 className="text-2xl sm:text-3xl font-medium mb-8 tracking-tight">
           Contact
         </h2>
         
-        <div className="space-y-4">
+        <div className="space-y-6">
           <a 
             href="mailto:hello@revelrycinema.com"
-            className="block text-base text-muted-foreground hover:text-foreground transition-colors"
+            className="block text-base sm:text-lg text-muted-foreground hover:text-foreground transition-colors"
             data-testid="link-email"
           >
             hello@revelrycinema.com

@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Menu, Search } from "lucide-react";
 
 export function Navigation() {
   const scrollToSection = (id: string) => {
@@ -16,35 +17,36 @@ export function Navigation() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <div className="px-6 py-6">
+        <div className="flex items-center justify-between">
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="text-white hover:bg-white/10"
+            data-testid="button-menu"
+          >
+            <Menu className="w-6 h-6" />
+            <span className="sr-only">Menu</span>
+          </Button>
+          
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-sm font-medium tracking-wide hover-elevate rounded px-2 py-1 -ml-2"
+            className="text-white text-sm font-medium tracking-widest hover:opacity-70 transition-opacity"
             data-testid="link-home"
           >
             REVELRY CINEMA
           </button>
           
-          <nav className="flex items-center gap-1">
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => scrollToSection("about")}
-              data-testid="link-about"
-            >
-              About
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="sm"
-              onClick={() => scrollToSection("contact")}
-              data-testid="link-contact"
-            >
-              Contact
-            </Button>
-          </nav>
+          <Button 
+            variant="ghost" 
+            size="icon"
+            className="text-white hover:bg-white/10"
+            data-testid="button-search"
+          >
+            <Search className="w-6 h-6" />
+            <span className="sr-only">Search</span>
+          </Button>
         </div>
       </div>
     </header>
