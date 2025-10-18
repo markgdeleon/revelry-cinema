@@ -18,7 +18,7 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-black/30" />
       
-      <div className="relative z-10 px-8 sm:px-12 lg:px-16 pt-24 md:pt-28 pb-32 w-full">
+      <div className="relative z-10 px-8 sm:px-12 lg:px-16 pt-40 md:pt-48 lg:pt-56 pb-32 w-full">
         <div className="space-y-1">
           {films.map((film, index) => (
             <div 
