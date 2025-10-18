@@ -1,12 +1,13 @@
 import heroImage from "@assets/Stills_1.1.1_1.13.1_1760764423350.jpg";
 
 const films = [
-  { title: "Golden Hour", year: "2025" },
-  { title: "The Last Conversation", year: "2024" },
-  { title: "Echoes", year: "2025" },
-  { title: "In Motion", year: "2024" },
-  { title: "Threshold", year: "2025" },
-  { title: "Horizons", year: "2024" },
+  { title: "Lila.exe", year: "Coming Soon" },
+  { title: "The Handy Man", year: "Coming Soon" },
+  { title: "Red Light Teachers", year: "2025" },
+  { title: "Revelry", year: "2024" },
+  { title: "The Master Chief", year: "2023" },
+  { title: "Summer Jazz", year: "2022" },
+  { title: "Anita", year: "2021" },
 ];
 
 export function Hero() {
