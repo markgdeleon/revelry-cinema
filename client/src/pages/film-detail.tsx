@@ -109,7 +109,7 @@ export default function FilmDetail() {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      <main className="pt-32 md:pt-40 lg:pt-48">
+      <main className="pt-48 md:pt-56 lg:pt-64">
         {film.heroImage && (
           <div className="w-full aspect-video bg-muted">
             <img 
