@@ -33,20 +33,6 @@ export function Navigation() {
           <nav className="hidden md:flex items-center gap-1">
             <Button 
               variant="ghost" 
-              onClick={() => scrollToSection("services")}
-              data-testid="link-services"
-            >
-              Services
-            </Button>
-            <Button 
-              variant="ghost" 
-              onClick={() => scrollToSection("portfolio")}
-              data-testid="link-portfolio"
-            >
-              Portfolio
-            </Button>
-            <Button 
-              variant="ghost" 
               onClick={() => scrollToSection("about")}
               data-testid="link-about"
             >
@@ -66,7 +52,7 @@ export function Navigation() {
               href="https://www.instagram.com/revelry_cinema" 
               target="_blank" 
               rel="noopener noreferrer"
-              data-testid="link-instagram"
+              data-testid="nav-link-instagram"
             >
               <Button size="icon" variant="ghost">
                 <SiInstagram className="w-4 h-4" />
@@ -77,7 +63,7 @@ export function Navigation() {
               href="https://www.facebook.com/revelrycinema" 
               target="_blank" 
               rel="noopener noreferrer"
-              data-testid="link-facebook"
+              data-testid="nav-link-facebook"
             >
               <Button size="icon" variant="ghost">
                 <SiFacebook className="w-4 h-4" />
@@ -88,7 +74,7 @@ export function Navigation() {
               href="https://www.tiktok.com/@revelrycinema" 
               target="_blank" 
               rel="noopener noreferrer"
-              data-testid="link-tiktok"
+              data-testid="nav-link-tiktok"
             >
               <Button size="icon" variant="ghost">
                 <SiTiktok className="w-4 h-4" />
@@ -99,7 +85,7 @@ export function Navigation() {
               href="https://x.com/revelrycinema" 
               target="_blank" 
               rel="noopener noreferrer"
-              data-testid="link-x"
+              data-testid="nav-link-x"
             >
               <Button size="icon" variant="ghost">
                 <SiX className="w-4 h-4" />

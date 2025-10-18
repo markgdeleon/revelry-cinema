@@ -1,10 +1,8 @@
 import { Navigation } from "@/components/navigation";
 import { Hero } from "@/components/hero";
-import { Services } from "@/components/services";
-import { Portfolio } from "@/components/portfolio";
+import { WorkGrid } from "@/components/work-grid";
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
-import { Newsletter } from "@/components/newsletter";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -13,11 +11,9 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <Services />
-        <Portfolio />
+        <WorkGrid />
         <About />
         <Contact />
-        <Newsletter />
       </main>
       <Footer />
     </div>

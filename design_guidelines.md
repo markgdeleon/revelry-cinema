@@ -2,19 +2,18 @@
 
 ## Design Approach
 
-**Selected Approach:** Reference-Based (Cinematic Portfolio)
+**Selected Approach:** A24-Inspired Artistic Portfolio
 
 **Primary References:**
-- Apple Product Pages: Premium photography treatment, generous whitespace
-- Behance/Portfolio Sites: Modern grid layouts for creative work showcase
-- Netflix: Dark cinematic aesthetic, content-focused design
-- Unsplash: Photography-first interfaces
+- A24 Films: Project-focused, artistic presentation, work as hero content
+- Showcase/Portfolio Sites: Large imagery, minimal text, let work speak
+- Artist Portfolios: Personal, creative, non-corporate feel
 
 **Design Principles:**
-1. Content is King: Photography and video work takes center stage
-2. Cinematic Darkness: Dark theme creates theater-like immersion
-3. Intentional Whitespace: Let work breathe, avoid clutter
-4. Subtle Sophistication: Refined interactions without distraction
+1. Work is Everything: Projects and visual work are the sole focus
+2. Artistic Over Commercial: Creative portfolio, not service provider
+3. Minimal Interference: Clean, simple UI that doesn't compete with imagery
+4. Cinematic Presentation: Dark theme, full-bleed images, generous spacing
 
 ---
 
@@ -138,14 +137,18 @@
 
 ## Page Structure
 
-1. **Hero:** Full-screen cinematic introduction with background image
-2. **Services:** 3-column grid showcasing core offerings
-3. **Portfolio:** Filterable gallery (masonry or grid layout)
-4. **About:** 2-column split (image + story)
-5. **Testimonials:** Client quotes with names/companies
-6. **Contact:** Form + contact details side-by-side
-7. **Newsletter CTA:** Above footer, distinct background
-8. **Footer:** Comprehensive with social links, quick nav, newsletter
+1. **Hero:** Minimal branding intro, optional tagline, clean and simple
+2. **Work Grid:** Large grid of projects (films, videos, photo series) - THE MAIN FOCUS
+3. **About:** Brief personal statement about the work/vision (not services)
+4. **Contact:** Simple, minimal - just email/social, no forms needed
+5. **Footer:** Minimal with social links and copyright
+
+**Key Differences from Service Site:**
+- No "Services" section - the work speaks for itself
+- No testimonials or client lists
+- No aggressive CTAs or "hire me" language
+- Contact is subtle, not prominent
+- Focus is 90% on the work showcase
 
 **Responsive Behavior:**
 - Mobile: Stack all columns to single column

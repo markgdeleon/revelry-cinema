@@ -1,143 +1,71 @@
-# Revelry Cinema - Portfolio Website
+# Revelry Cinema
 
 ## Overview
+An artistic portfolio website for Revelry Cinema, showcasing the film and photography work of Kyle Tims. Inspired by A24 Films' minimalist, project-focused approach, this site puts the creative work front and center.
 
-Revelry Cinema is a professional portfolio website for video production and photography services. The application showcases cinematic work through a dark, immersive interface inspired by premium portfolio sites and streaming platforms. Built as a full-stack web application with React frontend and Express backend, it enables potential clients to view work samples, learn about services, and submit contact inquiries or newsletter signups.
+## Design Philosophy
+- **Work-First**: Projects and visual content are the primary focus
+- **Artistic Over Commercial**: Portfolio presentation, not service selling
+- **Minimal UI**: Clean, simple design that doesn't compete with imagery
+- **Cinematic Dark Theme**: Theater-like dark aesthetic for immersive viewing
 
-## User Preferences
+## Project Structure
 
-Preferred communication style: Simple, everyday language.
+### Frontend (React + TypeScript)
+- **Hero**: Minimal branding introduction with site name and tagline
+- **Work Grid**: Main showcase of film and photo projects with filtering (All/Film/Photo)
+- **About**: Personal statement about the creative work and vision
+- **Contact**: Simple email and social media links
+- **Footer**: Minimal footer with social links and copyright
 
-## System Architecture
+### Backend (Express + In-Memory Storage)
+- Minimal backend - mainly serves the frontend
+- In-memory storage for any future contact/newsletter features (currently unused)
+- API routes prepared but not actively used in current minimal design
 
-### Frontend Architecture
+### Styling
+- **Dark Theme**: Cinematic dark mode as default
+- **Tailwind CSS**: Utility-first styling
+- **Shadcn UI**: High-quality component primitives
+- **Custom Design Tokens**: Warm orange primary color (25 95% 48%)
+- **Typography**: Playfair Display for headings, Inter for body text
 
-**Framework & Build System**
-- **React 18** with TypeScript for type-safe component development
-- **Vite** as the build tool and development server, providing fast HMR (Hot Module Replacement)
-- **Wouter** for lightweight client-side routing (single-page application with home and 404 routes)
+## Key Features
+1. **Project Showcase**: Grid of film and photo work with hover effects
+2. **Category Filtering**: Toggle between All, Film, and Photo projects
+3. **Responsive Design**: Mobile-first, works beautifully on all devices
+4. **Social Integration**: Links to Instagram, Facebook, TikTok, and X
+5. **Smooth Navigation**: Scroll-to-section navigation with fixed header
 
-**UI Component System**
-- **shadcn/ui** component library built on Radix UI primitives for accessible, customizable components
-- **Tailwind CSS** for utility-first styling with custom design tokens
-- Component structure follows atomic design principles with reusable UI primitives in `client/src/components/ui/`
+## Recent Changes (October 2025)
+- Pivoted from service-focused site to artistic portfolio (A24-inspired)
+- Removed "Services" section and contact forms
+- Simplified to focus 90% on work showcase
+- Removed testimonials, CTAs, and corporate language
+- Made About section more personal and artistic
+- Simplified contact to just email and social links
 
-**Design System**
-- Dark-first cinematic aesthetic with carefully crafted color palette (deep charcoal backgrounds, warm amber accents)
-- Typography hierarchy using Inter (sans-serif) and Playfair Display (serif) from Google Fonts
-- Design tokens defined in CSS variables for consistent theming across light/dark modes
-- Generous whitespace and photography-first layouts inspired by Apple, Netflix, and Behance
+## Tech Stack
+- React 18 with TypeScript
+- Wouter (client-side routing)
+- TanStack Query (data fetching)
+- Tailwind CSS + Shadcn UI
+- Express.js backend
+- Vite (build tool)
 
-**State Management & Data Fetching**
-- **TanStack Query (React Query)** for server state management, caching, and API communication
-- Form state managed via **React Hook Form** with **Zod** schema validation
-- Toast notifications for user feedback using custom toast hook
+## Color Palette
+- Background: Deep charcoal (15 8% 8%)
+- Card/Surface: Elevated dark (15 8% 12%)
+- Primary: Warm cinematic orange (25 95% 48%)
+- Text: Off-white (0 0% 98%) with muted variants
 
-**Key Features**
-- Hero section with full-screen cinematic imagery
-- Portfolio gallery with category filtering (video/photo/commercial/events)
-- Service showcase cards highlighting video production, photography, and storytelling
-- Contact form with validation for project inquiries
-- Newsletter signup functionality
-- Responsive navigation with smooth scroll-to-section behavior
-- Social media integration (Instagram, Facebook, TikTok, X/Twitter)
-
-### Backend Architecture
-
-**Server Framework**
-- **Express.js** with TypeScript for REST API endpoints
-- Middleware for JSON parsing, URL encoding, and request/response logging
-- Custom error handling middleware for consistent error responses
-
-**API Endpoints**
-- `POST /api/contact` - Accepts contact inquiry submissions with validation
-- `POST /api/newsletter` - Handles newsletter signup requests with duplicate email detection
-
-**Data Validation**
-- **Zod schemas** defined in shared directory for runtime validation
-- Validation schemas enforce minimum lengths, email format, and required fields
-- Error responses include user-friendly validation messages via `zod-validation-error`
-
-**Development vs Production**
-- Development: Vite middleware integrated with Express for HMR and asset serving
-- Production: Static file serving from build output directory
-- Environment-aware configuration via `NODE_ENV`
-
-### Data Storage Solutions
-
-**Current Implementation**
-- **In-Memory Storage** (`MemStorage` class) for development and prototyping
-- Stores contact inquiries and newsletter signups in JavaScript Maps with UUID-based IDs
-- Implements `IStorage` interface for future database integration flexibility
-
-**Database Schema (Prepared for PostgreSQL)**
-- **Drizzle ORM** configured with PostgreSQL dialect
-- Two main tables defined in `shared/schema.ts`:
-  - `contact_inquiries`: id, name, email, project_type, message, created_at
-  - `newsletter_signups`: id, email (unique), created_at
-- Schema uses UUID primary keys with automatic generation
-- Ready for migration to **Neon Database** (serverless Postgres) based on dependencies
-
-**Data Models**
-- Type-safe models generated from Drizzle schema
-- Insert schemas derived from table definitions with Zod validation
-- Separation between insert types (user input) and select types (database records)
-
-### Authentication and Authorization
-
-**Current State**
-- No authentication system implemented (public-facing portfolio site)
-- All endpoints are publicly accessible
-- Contact and newsletter forms are open to anonymous submissions
-
-**Considerations**
-- Future admin panel would require authentication for viewing submissions
-- Potential spam prevention mechanisms needed (rate limiting, CAPTCHA)
-
-### External Dependencies
-
-**Database & ORM**
-- **@neondatabase/serverless** - Serverless PostgreSQL client for Neon Database
-- **Drizzle ORM** - Type-safe ORM with migration support
-- **drizzle-kit** - CLI tool for schema management and migrations
-- **connect-pg-simple** - PostgreSQL session store (prepared for future session management)
-
-**UI & Styling**
-- **Radix UI** - Comprehensive set of accessible, unstyled UI primitives (20+ component packages)
-- **Tailwind CSS** - Utility-first CSS framework with PostCSS processing
-- **class-variance-authority** - Utility for building variant-based component APIs
-- **tailwind-merge** - Smart Tailwind class merging utility
-- **cmdk** - Command palette component
-- **embla-carousel-react** - Carousel/slider functionality
-- **lucide-react** - Icon library
-- **react-icons** - Additional icons (social media logos)
-
-**Forms & Validation**
-- **react-hook-form** - Performant form state management
-- **@hookform/resolvers** - Validation resolver integration
-- **zod** - Schema validation library
-- **drizzle-zod** - Zod schema generation from Drizzle tables
-- **zod-validation-error** - User-friendly validation error formatting
-
-**Data Fetching & State**
-- **@tanstack/react-query** - Async state management and caching
-- **wouter** - Minimal routing library (1-2KB alternative to React Router)
-
-**Development Tools**
-- **Vite plugins** from Replit for runtime error overlay, dev banner, and cartographer
-- **TypeScript** for type safety across client, server, and shared code
-- **tsx** for running TypeScript in Node.js development server
-
-**Build & Production**
-- **esbuild** - Fast bundler for server code in production builds
-- **autoprefixer** - CSS vendor prefixing
-
-**Asset Management**
-- Generated placeholder images stored in `attached_assets/generated_images/`
-- Images imported directly into components via Vite's asset handling
-- Future integration may use cloud storage (Cloudinary, S3) for user-uploaded content
-
-**Social Media Integration**
-- Hardcoded social media links (Instagram, Facebook, TikTok, X/Twitter)
-- Links point to placeholder accounts (@revelry_cinema, @revelrycinema)
-- No API integration; purely navigational links
+## Images
+All project images are AI-generated placeholders showcasing various types of work:
+- Wedding/event cinematography
+- Commercial photography
+- Landscape photography
+- Corporate video
+- Portrait photography
+- Music video production
+- Architectural photography
+- Fashion photography/video
