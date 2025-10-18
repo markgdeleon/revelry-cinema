@@ -18,12 +18,6 @@ export function Hero() {
       />
       <div className="absolute inset-0 bg-black/30" />
       
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-bold mb-2 tracking-tight">
-          A24
-        </h1>
-      </div>
-      
       <div className="relative z-10 px-8 sm:px-12 lg:px-16 py-32 w-full">
         <div className="space-y-1">
           {films.map((film, index) => (
