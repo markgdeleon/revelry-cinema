@@ -19,7 +19,7 @@ export function Navigation() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-50">
-      <div className="px-6 py-8">
+      <div className="px-6 py-4">
         <div className="flex items-center justify-between">
           <Button 
             variant="ghost" 
