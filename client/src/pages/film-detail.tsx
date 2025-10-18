@@ -25,7 +25,7 @@ const filmsData = {
     director: "Chris Soriano",
     writer: "Chris Soriano",
     starring: ["Chris Soriano", "Jaime Gray"],
-    synopsis: "",
+    synopsis: "A broken man and a determined woman fight over a crumbling italian villa and end up restoring each other instead.",
     heroImage: handyManHeroImage,
     posters: []
   },
