@@ -18,8 +18,8 @@ export function Navigation() {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      <div className="px-6 pt-0 pb-4">
+    <header className="absolute top-0 left-0 right-0 z-40 pointer-events-none">
+      <div className="px-6 pt-0 pb-4 pointer-events-auto">
         <div className="flex items-center justify-between">
           <Button 
             variant="ghost" 
