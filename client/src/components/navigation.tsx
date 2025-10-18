@@ -33,7 +33,7 @@ export function Navigation() {
           
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="hover:opacity-70 transition-opacity"
+            className="hover:opacity-70 transition-opacity -mt-2"
             data-testid="link-home"
           >
             <img 
