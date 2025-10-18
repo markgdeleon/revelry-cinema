@@ -112,12 +112,16 @@ export default function FilmDetail() {
       
       <main className="pt-48 md:pt-56 lg:pt-64">
         {film.heroImage && (
-          <div className="w-full aspect-video bg-muted">
+          <div className="w-full aspect-video bg-muted relative">
             <img 
               src={film.heroImage} 
               alt={film.title}
               className="w-full h-full object-cover"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+            <h1 className="absolute bottom-8 left-8 sm:left-12 lg:left-16 text-5xl md:text-6xl lg:text-7xl font-medium text-white z-10" data-testid="text-film-title">
+              {film.title}
+            </h1>
           </div>
         )}
 
@@ -132,42 +136,34 @@ export default function FilmDetail() {
             Back to Films
           </Button>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-16">
+          <div className="space-y-8 max-w-2xl mb-16">
             <div>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium mb-12" data-testid="text-film-title">
-                {film.title}
-              </h1>
+              <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Release Date</h6>
+              <h3 className="text-2xl font-medium" data-testid="text-release-date">{film.releaseDate}</h3>
             </div>
 
-            <div className="space-y-8">
-              <div>
-                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Release Date</h6>
-                <h3 className="text-2xl font-medium" data-testid="text-release-date">{film.releaseDate}</h3>
-              </div>
-
-              <div>
-                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Directed by</h6>
-                <h3 className="text-2xl font-medium" data-testid="text-director">{film.director}</h3>
-              </div>
-
-              {film.writer && (
-                <div>
-                  <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Written by</h6>
-                  <h3 className="text-2xl font-medium" data-testid="text-writer">{film.writer}</h3>
-                </div>
-              )}
-
-              {film.starring && film.starring.length > 0 && (
-                <div>
-                  <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Starring</h6>
-                  <div className="space-y-1">
-                    {film.starring.map((actor, index) => (
-                      <h3 key={index} className="text-2xl font-medium">{actor}</h3>
-                    ))}
-                  </div>
-                </div>
-              )}
+            <div>
+              <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Directed by</h6>
+              <h3 className="text-2xl font-medium" data-testid="text-director">{film.director}</h3>
             </div>
+
+            {film.writer && (
+              <div>
+                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Written by</h6>
+                <h3 className="text-2xl font-medium" data-testid="text-writer">{film.writer}</h3>
+              </div>
+            )}
+
+            {film.starring && film.starring.length > 0 && (
+              <div>
+                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Starring</h6>
+                <div className="space-y-1">
+                  {film.starring.map((actor, index) => (
+                    <h3 key={index} className="text-2xl font-medium">{actor}</h3>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           {film.synopsis && (
