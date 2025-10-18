@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
 import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
+import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 
 const filmsData = {
   "lila-exe": {
@@ -32,12 +33,12 @@ const filmsData = {
   "red-light-teachers": {
     title: "Red Light Teachers",
     year: "2025",
-    releaseDate: "2025",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "",
-    heroImage: "",
+    releaseDate: "September 3, 2025",
+    director: "Chris Soriano",
+    writer: "Chris Soriano",
+    starring: ["Drea Castro", "Chris Soriano"],
+    synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
+    heroImage: redLightTeachersHeroImage,
     posters: []
   },
   "revelry": {
