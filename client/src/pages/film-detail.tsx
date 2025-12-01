@@ -1,106 +1,26 @@
 import { useParams, Link } from "wouter";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { CarouselSection } from "@/components/carousel-section";
+import { FilmCard } from "@/components/film-card";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
-import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
-import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
-
-const filmsData = {
-  "lila-exe": {
-    title: "Lila.exe",
-    year: "Coming Soon",
-    releaseDate: "TBA",
-    director: "Mark De Leon",
-    writer: "Mark De Leon",
-    starring: ["Nadine Lustre", "Yassi Pressman"],
-    synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
-    heroImage: lilaHeroImage,
-    posters: []
-  },
-  "the-handy-man": {
-    title: "The Handy Man",
-    year: "Coming Soon",
-    releaseDate: "TBA",
-    director: "Chris Soriano",
-    writer: "Chris Soriano",
-    starring: ["Chris Soriano", "Jaime Gray"],
-    synopsis: "A broken man and a determined woman fight over a crumbling italian villa and end up restoring each other instead.",
-    heroImage: handyManHeroImage,
-    posters: []
-  },
-  "red-light-teachers": {
-    title: "Red Light Teachers",
-    year: "2025",
-    releaseDate: "September 3, 2025",
-    director: "Chris Soriano",
-    writer: "Chris Soriano",
-    starring: ["Drea Castro", "Chris Soriano"],
-    synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
-    heroImage: redLightTeachersHeroImage,
-    posters: []
-  },
-  "revelry": {
-    title: "Revelry",
-    year: "2024",
-    releaseDate: "2024",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "",
-    heroImage: "",
-    posters: []
-  },
-  "the-master-chief": {
-    title: "The Master Chief",
-    year: "2023",
-    releaseDate: "2023",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "",
-    heroImage: "",
-    posters: []
-  },
-  "summer-jazz": {
-    title: "Summer Jazz",
-    year: "2022",
-    releaseDate: "2022",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "",
-    heroImage: "",
-    posters: []
-  },
-  "anita": {
-    title: "Anita",
-    year: "2021",
-    releaseDate: "2021",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
-    synopsis: "",
-    heroImage: "",
-    posters: []
-  }
-};
+import { getFilmBySlug, films } from "@/lib/films-data";
 
 export default function FilmDetail() {
   const params = useParams();
   const filmSlug = params.slug as string;
-  const film = filmsData[filmSlug as keyof typeof filmsData];
+  const film = getFilmBySlug(filmSlug);
 
   if (!film) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-medium mb-4">Film Not Found</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">Film Not Found</h1>
           <Link href="/">
-            <Button variant="outline" data-testid="link-home">
+            <Button variant="outline" className="bg-white text-black hover:bg-white/90 border-0" data-testid="link-home">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
+              Back to Films
             </Button>
           </Link>
         </div>
@@ -108,94 +28,117 @@ export default function FilmDetail() {
     );
   }
 
+  const otherFilms = films.filter(f => f.slug !== filmSlug).slice(0, 4);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-black">
       <Navigation />
       
-      <main className="pt-48 md:pt-56 lg:pt-64">
-        {film.heroImage && (
-          <div className="w-full aspect-video bg-muted relative">
+      <main>
+        {film.heroImage ? (
+          <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden">
             <img 
               src={film.heroImage} 
               alt={film.title}
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-            <h1 className="absolute bottom-8 left-8 sm:left-12 lg:left-16 text-5xl md:text-6xl lg:text-7xl font-medium text-white z-10" data-testid="text-film-title">
-              {film.title}
-            </h1>
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
+              <Link href="/">
+                <Button 
+                  variant="ghost" 
+                  className="text-white/70 hover:text-white hover:bg-white/10 mb-6 -ml-4"
+                  data-testid="link-back"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Films
+                </Button>
+              </Link>
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white" data-testid="text-film-title">
+                {film.title}
+              </h1>
+            </div>
+          </section>
+        ) : (
+          <section className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-800 to-black" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
+              <Link href="/">
+                <Button 
+                  variant="ghost" 
+                  className="text-white/70 hover:text-white hover:bg-white/10 mb-6 -ml-4"
+                  data-testid="link-back"
+                >
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back to Films
+                </Button>
+              </Link>
+              
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white" data-testid="text-film-title">
+                {film.title}
+              </h1>
+            </div>
+          </section>
         )}
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 py-16 relative z-50">
-          <Button 
-            variant="ghost" 
-            className="mb-8 -ml-4 relative z-50"
-            data-testid="button-back"
-            onClick={() => window.location.href = '/'}
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Films
-          </Button>
-
-          <div className="space-y-8 max-w-2xl mb-16">
-            <div>
-              <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Release Date</h6>
-              <h3 className="text-2xl font-medium" data-testid="text-release-date">{film.releaseDate}</h3>
-            </div>
-
-            <div>
-              <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Directed by</h6>
-              <h3 className="text-2xl font-medium" data-testid="text-director">{film.director}</h3>
-            </div>
-
-            {film.writer && (
+        <section className="px-8 md:px-12 lg:px-16 py-12 md:py-16">
+          <div className="max-w-4xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div>
-                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Written by</h6>
-                <h3 className="text-2xl font-medium" data-testid="text-writer">{film.writer}</h3>
+                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Release Date</h3>
+                <p className="text-white text-lg" data-testid="text-release-date">{film.releaseDate}</p>
               </div>
-            )}
-
-            {film.starring && film.starring.length > 0 && (
+              
               <div>
-                <h6 className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">Starring</h6>
-                <div className="space-y-1">
-                  {film.starring.map((actor, index) => (
-                    <h3 key={index} className="text-2xl font-medium">{actor}</h3>
-                  ))}
+                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Director</h3>
+                <p className="text-white text-lg" data-testid="text-director">{film.director}</p>
+              </div>
+              
+              <div>
+                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Writer</h3>
+                <p className="text-white text-lg" data-testid="text-writer">{film.writer}</p>
+              </div>
+              
+              {film.starring.length > 0 && (
+                <div>
+                  <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Starring</h3>
+                  <p className="text-white text-lg" data-testid="text-starring">{film.starring.join(", ")}</p>
                 </div>
+              )}
+            </div>
+            
+            {film.synopsis && (
+              <div className="mb-12">
+                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-4">Logline</h3>
+                <p className="text-white/80 text-xl leading-relaxed" data-testid="text-synopsis">
+                  {film.synopsis}
+                </p>
               </div>
             )}
           </div>
+        </section>
 
-          {film.synopsis && (
-            <div className="mb-16">
-              <h6 className="text-sm text-muted-foreground mb-4 uppercase tracking-wider">Logline</h6>
-              <p className="text-xl leading-relaxed max-w-3xl" data-testid="text-synopsis">
-                {film.synopsis}
-              </p>
-            </div>
-          )}
-
-          {film.posters && film.posters.length > 0 && (
-            <div>
-              <h6 className="text-sm text-muted-foreground mb-6 uppercase tracking-wider">Posters</h6>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {film.posters.map((poster, index) => (
-                  <div key={index} className="aspect-[2/3] bg-muted">
-                    <img 
-                      src={poster} 
-                      alt={`${film.title} poster ${index + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+        {otherFilms.length > 0 && (
+          <CarouselSection title="More Films">
+            {otherFilms.map((f) => (
+              <FilmCard
+                key={f.slug}
+                slug={f.slug}
+                title={f.title}
+                year={f.year}
+                image={f.heroImage}
+                status={f.status}
+              />
+            ))}
+          </CarouselSection>
+        )}
       </main>
-
+      
       <Footer />
     </div>
   );

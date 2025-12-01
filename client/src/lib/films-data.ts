@@ -1,0 +1,119 @@
+import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
+import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
+import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
+import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholder_image.png";
+import masterChiefPlaceholder from "@assets/generated_images/master_chief_film_placeholder.png";
+import summerJazzPlaceholder from "@assets/generated_images/summer_jazz_film_placeholder.png";
+import anitaPlaceholder from "@assets/generated_images/anita_film_placeholder_image.png";
+
+export interface Film {
+  slug: string;
+  title: string;
+  year: string;
+  releaseDate: string;
+  director: string;
+  writer: string;
+  starring: string[];
+  synopsis: string;
+  heroImage: string;
+  status: "coming-soon" | "now-available" | "library";
+}
+
+export const films: Film[] = [
+  {
+    slug: "lila-exe",
+    title: "Lila.exe",
+    year: "Coming Soon",
+    releaseDate: "TBA",
+    director: "Mark De Leon",
+    writer: "Mark De Leon",
+    starring: ["Nadine Lustre", "Yassi Pressman"],
+    synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
+    heroImage: lilaHeroImage,
+    status: "coming-soon",
+  },
+  {
+    slug: "the-handy-man",
+    title: "The Handy Man",
+    year: "Coming Soon",
+    releaseDate: "TBA",
+    director: "Chris Soriano",
+    writer: "Chris Soriano",
+    starring: ["Chris Soriano", "Jaime Gray"],
+    synopsis: "A broken man and a determined woman fight over a crumbling italian villa and end up restoring each other instead.",
+    heroImage: handyManHeroImage,
+    status: "coming-soon",
+  },
+  {
+    slug: "red-light-teachers",
+    title: "Red Light Teachers",
+    year: "2025",
+    releaseDate: "September 3, 2025",
+    director: "Chris Soriano",
+    writer: "Chris Soriano",
+    starring: ["Drea Castro", "Chris Soriano"],
+    synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
+    heroImage: redLightTeachersHeroImage,
+    status: "coming-soon",
+  },
+  {
+    slug: "revelry",
+    title: "Revelry",
+    year: "2024",
+    releaseDate: "2024",
+    director: "Kyle Tims",
+    writer: "Kyle Tims",
+    starring: [],
+    synopsis: "",
+    heroImage: revelryPlaceholder,
+    status: "now-available",
+  },
+  {
+    slug: "the-master-chief",
+    title: "The Master Chief",
+    year: "2023",
+    releaseDate: "2023",
+    director: "Kyle Tims",
+    writer: "Kyle Tims",
+    starring: [],
+    synopsis: "",
+    heroImage: masterChiefPlaceholder,
+    status: "library",
+  },
+  {
+    slug: "summer-jazz",
+    title: "Summer Jazz",
+    year: "2022",
+    releaseDate: "2022",
+    director: "Kyle Tims",
+    writer: "Kyle Tims",
+    starring: [],
+    synopsis: "",
+    heroImage: summerJazzPlaceholder,
+    status: "library",
+  },
+  {
+    slug: "anita",
+    title: "Anita",
+    year: "2021",
+    releaseDate: "2021",
+    director: "Kyle Tims",
+    writer: "Kyle Tims",
+    starring: [],
+    synopsis: "",
+    heroImage: anitaPlaceholder,
+    status: "library",
+  },
+];
+
+export const getFilmBySlug = (slug: string): Film | undefined => {
+  return films.find((film) => film.slug === slug);
+};
+
+export const getFilmsByStatus = (status: Film["status"]): Film[] => {
+  return films.filter((film) => film.status === status);
+};
+
+export const getFeaturedFilm = (): Film => {
+  return films[0];
+};

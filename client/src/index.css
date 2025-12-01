@@ -132,17 +132,17 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 15 8% 8%;
+  --background: 0 0% 0%;
 
-  --foreground: 0 0% 98%;
+  --foreground: 0 0% 100%;
 
-  --border: 15 8% 18%;
+  --border: 0 0% 15%;
 
-  --card: 15 8% 12%;
+  --card: 0 0% 6%;
 
-  --card-foreground: 0 0% 95%;
+  --card-foreground: 0 0% 98%;
 
-  --card-border: 15 8% 16%;
+  --card-border: 0 0% 12%;
 
   --sidebar: 15 8% 10%;
 
@@ -239,9 +239,25 @@
     @apply border-border;
   }
 
+  html {
+    @apply dark;
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+}
+
+/* Smooth horizontal scrolling for carousels */
+.carousel-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carousel-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 /**

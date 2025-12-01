@@ -2,18 +2,16 @@
 
 ## Design Approach
 
-**Selected Approach:** A24-Inspired Artistic Portfolio
+**Selected Approach:** NEON-Inspired Film Distributor Showcase
 
-**Primary References:**
-- A24 Films: Project-focused, artistic presentation, work as hero content
-- Showcase/Portfolio Sites: Large imagery, minimal text, let work speak
-- Artist Portfolios: Personal, creative, non-corporate feel
+**Primary Reference:**
+- NEON Rated: Full-screen heroes, horizontal scrolling carousels, dark cinematic theme, minimal text overlays
 
 **Design Principles:**
-1. Work is Everything: Projects and visual work are the sole focus
-2. Artistic Over Commercial: Creative portfolio, not service provider
-3. Minimal Interference: Clean, simple UI that doesn't compete with imagery
-4. Cinematic Presentation: Dark theme, full-bleed images, generous spacing
+1. Cinematic Immersion: Full-screen imagery, video backgrounds, dark theme
+2. Browse Experience: Horizontal scrolling carousels for discovering films
+3. Minimal Text: Let film imagery speak, only title + year overlays
+4. Dark by Default: True black/near-black backgrounds for maximum contrast
 
 ---
 
@@ -21,136 +19,145 @@
 
 ### A. Color Palette
 
-**Dark Mode Primary:**
-- Background: 15 8% 8% (deep charcoal, almost black)
-- Surface: 15 8% 12% (elevated cards/sections)
-- Border: 15 8% 18% (subtle dividers)
+**Dark Theme (Default - Always On):**
+- Background: 0 0% 0% (true black)
+- Surface: 0 0% 6% (slightly elevated cards)
+- Border: 0 0% 15% (subtle dividers)
 
-**Light Accents:**
-- Text Primary: 0 0% 98% (off-white for readability)
-- Text Secondary: 0 0% 70% (muted descriptions)
+**Text Colors:**
+- Primary: 0 0% 100% (pure white for headlines)
+- Secondary: 0 0% 70% (muted descriptions)
+- Tertiary: 0 0% 50% (meta info)
 
-**Brand Colors:**
-- Primary: 25 95% 53% (warm cinematic orange/amber - for CTAs and accents)
-- Hover: 25 95% 48% (slightly darker)
-
-**Accent (Use Sparingly):**
-- Success/Active: 142 71% 45% (muted teal for form success states)
+**Brand Accent:**
+- Primary Action: 0 0% 100% (white buttons/links)
+- Hover: 0 0% 85% (slightly dimmed)
 
 ### B. Typography
 
-**Primary Font:** Inter (Google Fonts) - Modern, clean, excellent readability
-**Secondary Font:** Playfair Display (Google Fonts) - Elegant serif for hero headlines
+**Primary Font:** Inter or system sans-serif - Modern, clean
+**Film Titles:** Bold, large, white - let them command attention
 
 **Hierarchy:**
-- Hero Headline: Playfair Display, 72px (4.5rem), font-weight 700, tracking tight
-- Section Headers: Inter, 48px (3rem), font-weight 700
-- Subheadings: Inter, 24px (1.5rem), font-weight 600
-- Body: Inter, 16px (1rem), font-weight 400, line-height 1.7
-- Small/Meta: Inter, 14px (0.875rem), font-weight 400
+- Hero Title: 72-96px, font-weight 700, uppercase optional
+- Section Headers: 24-32px, font-weight 600, uppercase
+- Film Card Title: 18-24px, font-weight 600
+- Meta Text: 14px, font-weight 400, muted color
 
 ### C. Layout System
 
-**Container Widths:**
-- Max content: max-w-7xl (1280px)
-- Text content: max-w-4xl (896px)
-- Narrow forms: max-w-2xl (672px)
+**Full-Width Sections:**
+- Hero: 100vh full-screen with video/image background
+- Carousels: Full-width horizontal scrolling sections
+- No max-width containers - edge-to-edge design
 
-**Spacing Primitives:** Use Tailwind units of 4, 8, 12, 16, 20, 24, 32
-- Section padding: py-20 to py-32 (desktop), py-12 to py-16 (mobile)
-- Component gaps: gap-8 to gap-12
-- Card padding: p-8 to p-12
-- Tight spacing: space-y-4
-- Generous spacing: space-y-8
-
-**Grid Systems:**
-- Portfolio: 3-column grid (lg:grid-cols-3, md:grid-cols-2, grid-cols-1)
-- Services: 3-column cards (same responsive pattern)
-- Testimonials/Stats: 2-column split
+**Spacing:**
+- Section gaps: 80-120px vertical
+- Carousel item gaps: 16-24px
+- Card padding: Minimal, let images breathe
 
 ### D. Component Library
 
-**Navigation:**
-- Sticky header with blur backdrop (backdrop-blur-md)
-- Logo left, nav links center, social icons right
-- Minimal height (h-16 to h-20) to maximize content space
-
 **Hero Section:**
-- Full-viewport height (min-h-screen) with high-quality background image
-- Dark gradient overlay (from-black/70 to-black/40)
-- Centered headline + subheadline + CTA
-- Subtle scroll indicator at bottom
+- Full viewport height (100vh)
+- Video background with fallback image
+- Dark gradient overlay (from-black/60 via-transparent to-black/40)
+- Featured film title large and bold at bottom-left
+- "Play Trailer" button with play icon
+- Optional small thumbnail + "Get Tickets" CTA
 
-**Service Cards:**
-- Dark surface background with subtle border
-- Icon or representative image at top
-- Service title, description, and "Learn More" link
-- Hover: slight scale and border glow effect
+**Film Cards (Carousel Items):**
+- Large poster/still image (aspect-ratio 16:9 or 2:3)
+- Title overlay at bottom with gradient
+- Year badge or "Coming Soon" label
+- Hover: Slight scale (1.02) + brightness increase
+- Click: Navigate to film detail page
 
-**Portfolio Gallery:**
-- Masonry/grid layout with hover overlays
-- Category filters (All, Video, Photo, Commercial, Events)
-- Lightbox modal for full-screen viewing
-- Project title and category tag on hover
+**Carousel Sections:**
+- Section title: Uppercase, bold, left-aligned
+- Horizontal scroll with overflow visible
+- Scroll buttons or drag-to-scroll
+- 4-6 items visible on desktop, 1-2 on mobile
 
-**Forms:**
-- Dark input backgrounds (bg-white/5) with light borders
-- Focus state: border color changes to primary orange
-- Floating labels or top-aligned labels
-- Full-width submit button with primary color
+**Navigation:**
+- Fixed/sticky at top
+- Transparent over hero, solid on scroll
+- Logo left, minimal links right (About, Contact)
+- Hamburger menu on mobile
 
 **Footer:**
-- Multi-column layout (Logo/About | Quick Links | Newsletter | Social)
-- Newsletter signup with inline form
-- Social media icon links with hover effects
-- Copyright and additional links at bottom
+- Minimal: Logo, copyright, social links
+- Dark background matching theme
 
 ### E. Animations
 
-**Use Very Sparingly:**
-- Fade-in on scroll for section reveals (opacity + translateY)
-- Smooth hover transitions (200-300ms ease)
-- Portfolio grid: stagger animation on load
-- NO complex parallax, NO background animations, NO auto-playing elements
-
----
-
-## Images
-
-**Critical Images Needed:**
-
-1. **Hero Background (Large):** Cinematic behind-the-scenes shot of film production or dramatic landscape from portfolio work. Should be high-resolution, slightly desaturated to blend with dark theme. Position: Full-width background with gradient overlay.
-
-2. **Portfolio Thumbnails (12-16 images):** Mix of video stills and photography work showing range - events, commercial work, landscapes, portraits. Square or 16:9 aspect ratio for grid consistency.
-
-3. **About Section Image:** Professional photo of Kyle Tims with camera equipment or on set. Positioned alongside about text in 2-column layout.
-
-4. **Service Section Icons/Images:** Small illustrative images or icons for Video Production, Photography, and Creative Storytelling (can use icon library instead).
-
-**Image Treatment:**
-- Slight grain texture overlay on hero for filmic quality
-- Subtle vignette on portfolio items
-- Maintain high quality but optimize for web (WebP format)
-- Lazy loading for portfolio gallery
+**Subtle and Cinematic:**
+- Carousel scroll: Smooth momentum scrolling
+- Card hover: scale(1.02) transition 300ms ease
+- Page transitions: Fade in/out
+- Video: Autoplay, muted, loop for backgrounds
 
 ---
 
 ## Page Structure
 
-1. **Hero:** Minimal branding intro, optional tagline, clean and simple
-2. **Work Grid:** Large grid of projects (films, videos, photo series) - THE MAIN FOCUS
-3. **About:** Brief personal statement about the work/vision (not services)
-4. **Contact:** Simple, minimal - just email/social, no forms needed
-5. **Footer:** Minimal with social links and copyright
+### Homepage
+1. **Hero**: Full-screen featured film with video/image, title overlay, play trailer button
+2. **Coming Soon Carousel**: Films releasing soon
+3. **Now Available Carousel**: Recently released films
+4. **Library Carousel**: Past catalog films
+5. **Footer**: Minimal branding + social links
 
-**Key Differences from Service Site:**
-- No "Services" section - the work speaks for itself
-- No testimonials or client lists
-- No aggressive CTAs or "hire me" language
-- Contact is subtle, not prominent
-- Focus is 90% on the work showcase
+### Film Detail Page
+- Full-width hero image/video
+- Film title large at bottom-left of hero
+- Metadata: Director, Writer, Cast, Release Date
+- Logline section
+- Related films carousel at bottom
 
-**Responsive Behavior:**
-- Mobile: Stack all columns to single column
-- Tablet: 2-column layouts where appropriate
-- Desktop: Full multi-column glory with generous spacing
+### About Section
+- Brief filmmaker statement
+- Social links
+- Can be modal or inline section
+
+### Contact
+- Email link
+- Social media links
+- Minimal - just the essentials
+
+---
+
+## Responsive Behavior
+
+**Mobile (< 768px):**
+- Hero: Shorter height (70vh), adjusted text sizes
+- Carousels: 1-2 cards visible, swipe to scroll
+- Navigation: Hamburger menu
+- Stacked layout for detail pages
+
+**Tablet (768px - 1024px):**
+- 3-4 cards visible in carousels
+- Hero maintains full height
+
+**Desktop (> 1024px):**
+- Full experience with 5-6 cards visible
+- Hover interactions enabled
+- Large typography
+
+---
+
+## Films Data
+
+**Status Categories:**
+- Coming Soon: Films in production or pre-release
+- In Theaters/Now Available: Currently released
+- Library: Past catalog
+
+**Current Films:**
+- Lila.exe (Coming Soon) - Mark De Leon
+- The Handy Man (Coming Soon) - Chris Soriano
+- Red Light Teachers (Sept 3, 2025) - Chris Soriano
+- Revelry (2024)
+- The Master Chief (2023)
+- Summer Jazz (2022)
+- Anita (2021)
