@@ -54,7 +54,7 @@ export const films: Film[] = [
     releaseDate: "September 3, 2025",
     director: "Chris Soriano",
     writer: "Chris Soriano",
-    starring: ["Drea Castro", "Chris Soriano"],
+    starring: ["Drea Castro", "Chris Soriano", "Rhandy Torres"],
     synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
     heroImage: redLightTeachersHeroImage,
     status: "coming-soon",
