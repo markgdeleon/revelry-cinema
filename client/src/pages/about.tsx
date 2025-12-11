@@ -27,16 +27,13 @@ export default function About() {
             About
           </h1>
           
-          <div className="mb-12">
+          <div className="space-y-6 text-white/80 text-lg leading-relaxed">
             <img 
               src={slateImage} 
               alt="Revelry Cinema film slate" 
-              className="w-full max-w-lg rounded-sm"
+              className="float-right ml-8 mb-6 w-64 md:w-80 rounded-sm"
               data-testid="img-slate"
             />
-          </div>
-          
-          <div className="space-y-6 text-white/80 text-lg leading-relaxed">
             <p>
               Revelry Cinema is a US and Philippines based film and media company focused on elevated genre storytelling, cross cultural narratives, and grounded sci fi with emotional depth. The company develops and produces feature films designed for both domestic and international markets, with a focus on strong characters, cinematic world building, and commercially viable stories.
             </p>
