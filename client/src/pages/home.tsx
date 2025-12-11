@@ -42,7 +42,7 @@ export default function Home() {
               <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
               
               {/* Mobile: text below image */}
-              <div className="md:hidden bg-black p-4 pb-6">
+              <div className="md:hidden bg-black px-4 pt-2 pb-6">
                 <h2 
                   className="text-2xl font-bold text-white mb-1"
                   data-testid={`text-title-mobile-${film!.slug}`}
