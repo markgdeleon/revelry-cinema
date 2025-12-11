@@ -1,7 +1,7 @@
 import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
 import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
-import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholder_image.png";
+import revelryHeroImage from "@assets/alley_1.1.4_1765491246067.jpg";
 import masterChiefHeroImage from "@assets/master-chief-still.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import anitaHeroImage from "@assets/anita_4.5.1_1765489740070.jpg";
@@ -77,11 +77,12 @@ export const films: Film[] = [
     year: "Coming Soon",
     releaseDate: "TBA",
     director: "Mark De Leon",
-    writer: "Mark De Leon",
+    writer: "Mark De Leon, Kenan Eames",
     starring: [],
     synopsis: "",
-    heroImage: revelryPlaceholder,
+    heroImage: revelryHeroImage,
     status: "library",
+    trailerUrl: "https://www.youtube.com/watch?v=sQqm9Yxk_Yg",
   },
   {
     slug: "the-master-chief",
