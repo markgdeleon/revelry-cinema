@@ -51,7 +51,9 @@ export default function About() {
         </div>
       </main>
       
-      <Footer />
+      <div className="relative">
+        <Footer />
+      </div>
     </div>
   );
 }
