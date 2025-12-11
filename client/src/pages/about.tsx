@@ -26,23 +26,25 @@ export default function About() {
             About
           </h1>
           
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
+            ABOUT REVELRY CINEMA
+          </h2>
+          
           <div className="space-y-6 text-white/80 text-lg leading-relaxed">
             <p>
-              Revelry Cinema is an independent film production company dedicated to telling 
-              compelling stories that resonate with audiences worldwide.
+              Revelry Cinema is a US and Philippines based film and media company focused on elevated genre storytelling, cross cultural narratives, and grounded sci fi with emotional depth. The company develops and produces feature films designed for both domestic and international markets, with a focus on strong characters, cinematic world building, and commercially viable stories.
             </p>
             
             <p>
-              Founded with a passion for authentic storytelling, we collaborate with talented 
-              filmmakers to bring unique visions to life. Our catalog spans genres from 
-              intimate dramas to thought-provoking sci-fi, each project chosen for its 
-              artistic merit and emotional depth.
+              Founded by Mark De Leon, an 11 year US Navy veteran who transitioned into filmmaking, Revelry Cinema brings together a network of creatives, Navy veterans, and international collaborators. Its projects blend cinematic ambition with real world themes such as identity, technology, migration, ethics, and family while remaining financially disciplined and strategically positioned for global distribution.
             </p>
             
             <p>
-              We believe in the power of cinema to connect, inspire, and transform. Every 
-              film we produce is a labor of love, crafted with attention to detail and a 
-              commitment to excellence.
+              Revelry Cinema operates with a dual market approach by producing in both the US and the Philippines to maximize production value and international appeal. The company maintains strong relationships with actors, producers, and executives across Manila, Los Angeles, and emerging media communities throughout Asia.
+            </p>
+            
+            <p>
+              Revelry Cinema is building a brand centered on emotionally rich, culturally resonant, and commercially viable cinema.
             </p>
           </div>
         </div>
