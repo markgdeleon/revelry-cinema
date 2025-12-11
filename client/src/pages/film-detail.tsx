@@ -6,6 +6,7 @@ import { FilmCard } from "@/components/film-card";
 import { ArrowLeft, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getFilmBySlug, films } from "@/lib/films-data";
+import { SiAmazonprime, SiAppletv } from "react-icons/si";
 
 export default function FilmDetail() {
   const params = useParams();
@@ -74,6 +75,20 @@ export default function FilmDetail() {
                   </Button>
                 </a>
               )}
+              
+              {film.streamingOn && film.streamingOn.length > 0 && (
+                <div className="mt-6" data-testid="streaming-availability">
+                  <p className="text-white/60 text-sm mb-3">Available on</p>
+                  <div className="flex items-center gap-6">
+                    {film.streamingOn.includes("Amazon Prime") && (
+                      <SiAmazonprime className="w-20 h-8 text-white" data-testid="icon-amazon-prime" />
+                    )}
+                    {film.streamingOn.includes("Apple TV") && (
+                      <SiAppletv className="w-16 h-8 text-white" data-testid="icon-apple-tv" />
+                    )}
+                  </div>
+                </div>
+              )}
             </div>
           </section>
         ) : (
@@ -109,6 +124,20 @@ export default function FilmDetail() {
                     {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
                   </Button>
                 </a>
+              )}
+              
+              {film.streamingOn && film.streamingOn.length > 0 && (
+                <div className="mt-6" data-testid="streaming-availability">
+                  <p className="text-white/60 text-sm mb-3">Available on</p>
+                  <div className="flex items-center gap-6">
+                    {film.streamingOn.includes("Amazon Prime") && (
+                      <SiAmazonprime className="w-20 h-8 text-white" />
+                    )}
+                    {film.streamingOn.includes("Apple TV") && (
+                      <SiAppletv className="w-16 h-8 text-white" />
+                    )}
+                  </div>
+                </div>
               )}
             </div>
           </section>

@@ -24,6 +24,7 @@ export interface Film {
   trailerUrl?: string;
   previewUrl?: string;
   directorOfPhotography?: string;
+  streamingOn?: string[];
 }
 
 export const films: Film[] = [
@@ -97,6 +98,7 @@ export const films: Film[] = [
     producer: "Mark De Leon",
     finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
     trailerUrl: "https://www.youtube.com/watch?v=mvfyV2md2J8",
+    streamingOn: ["Amazon Prime", "Apple TV"],
   },
   {
     slug: "summer-jazz",
