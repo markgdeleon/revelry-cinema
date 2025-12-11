@@ -47,6 +47,9 @@ export const films: Film[] = [
     synopsis: "A broken man and a determined woman fight over a crumbling italian villa and end up restoring each other instead.",
     heroImage: handyManHeroImage,
     status: "coming-soon",
+    executiveProducer: "Hillary Soriano",
+    producer: "Mark De Leon",
+    finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
   },
   {
     slug: "red-light-teachers",
