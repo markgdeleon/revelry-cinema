@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { Mail } from "lucide-react";
+import { Link } from "wouter";
+import { ArrowLeft, Mail } from "lucide-react";
 import { SiInstagram, SiFacebook, SiTiktok, SiX } from "react-icons/si";
 import slateImage from "@assets/DSC_9401_1765493489915.jpg";
 
@@ -9,8 +10,18 @@ export default function Contact() {
     <div className="min-h-screen bg-black">
       <Navigation />
       
-      <main className="pt-32 pb-20 px-8 md:px-12 lg:px-16">
+      <main className="pt-24 pb-20 px-8 md:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto">
+          <Link href="/">
+            <button 
+              className="flex items-center text-white/70 hover:text-white text-sm transition-colors mb-6"
+              data-testid="link-back"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Films
+            </button>
+          </Link>
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-12" data-testid="text-page-title">
             Contact
           </h1>

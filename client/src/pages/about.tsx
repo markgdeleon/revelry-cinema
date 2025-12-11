@@ -1,5 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Link } from "wouter";
+import { ArrowLeft } from "lucide-react";
 import behindTheScenes from "@assets/A8B0829B-0ADC-446C-81D8-3E53A0CBFD0C_1765494189325.jpg";
 
 export default function About() {
@@ -13,8 +15,18 @@ export default function About() {
       
       <Navigation />
       
-      <main className="relative pt-32 pb-20 px-8 md:px-12 lg:px-16">
+      <main className="relative pt-24 pb-20 px-8 md:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto">
+          <Link href="/">
+            <button 
+              className="flex items-center text-white/70 hover:text-white text-sm transition-colors mb-6"
+              data-testid="link-back"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Films
+            </button>
+          </Link>
+          
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-12" data-testid="text-page-title">
             About
           </h1>
