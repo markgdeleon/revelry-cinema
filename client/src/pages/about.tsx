@@ -6,10 +6,10 @@ export default function About() {
   return (
     <div className="min-h-screen bg-black relative">
       <div 
-        className="fixed inset-0 bg-cover bg-center opacity-20"
+        className="fixed inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${behindTheScenes})` }}
       />
-      <div className="fixed inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+      <div className="fixed inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/90" />
       
       <Navigation />
       

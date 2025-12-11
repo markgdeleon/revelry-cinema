@@ -39,17 +39,6 @@ export function Navigation() {
                 </button>
               </Link>
               
-              {!isHomepage && (
-                <Link href="/">
-                  <button 
-                    className="hidden md:flex items-center text-white/70 hover:text-white text-sm transition-colors"
-                    data-testid="link-back-nav"
-                  >
-                    <ArrowLeft className="w-4 h-4 mr-1" />
-                    Back to Films
-                  </button>
-                </Link>
-              )}
             </div>
             
             <nav className="hidden md:flex items-center gap-8">
