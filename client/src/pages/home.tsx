@@ -29,7 +29,7 @@ export default function Home() {
           <Link href={`/film/${film!.slug}`} key={film!.slug}>
             <section 
               className={`relative w-full overflow-hidden cursor-pointer group ${
-                index === 0 ? 'h-auto md:h-screen' : 'h-auto md:h-[80vh]'
+                index === 0 ? 'pt-20 md:pt-0 md:h-screen' : 'md:h-[80vh]'
               }`}
               data-testid={`hero-section-${film!.slug}`}
             >
@@ -38,10 +38,29 @@ export default function Home() {
                 alt={film!.title}
                 className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+              <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
               
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
+              {/* Mobile: text below image */}
+              <div className="md:hidden bg-black p-4 pb-6">
+                <h2 
+                  className="text-2xl font-bold text-white mb-1"
+                  data-testid={`text-title-mobile-${film!.slug}`}
+                >
+                  {film!.title}
+                </h2>
+                <p className="text-white/60 text-sm">
+                  Directed by {film!.director}
+                </p>
+                {film!.slug === "lila-exe" && (
+                  <p className="text-white/40 text-xs mt-1">
+                    Coming Soon
+                  </p>
+                )}
+              </div>
+              
+              {/* Desktop: overlay text */}
+              <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
                 <h2 
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 transition-transform duration-300 group-hover:translate-x-2"
                   data-testid={`text-title-${film!.slug}`}
