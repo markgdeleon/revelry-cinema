@@ -8,11 +8,11 @@ const filmOrder = [
   "lila-exe",
   "revelry", 
   "anita",
+  "summer-jazz",
   "as-one",
   "red-light-teachers",
   "the-handy-man",
   "the-master-chief",
-  "summer-jazz",
 ];
 
 export default function Home() {
