@@ -80,7 +80,7 @@ export const films: Film[] = [
     starring: [],
     synopsis: "",
     heroImage: revelryPlaceholder,
-    status: "now-available",
+    status: "library",
   },
   {
     slug: "the-master-chief",
@@ -92,7 +92,7 @@ export const films: Film[] = [
     starring: ["Chris Soriano", "Georgina Tolentino"],
     synopsis: "",
     heroImage: masterChiefHeroImage,
-    status: "library",
+    status: "now-available",
     executiveProducer: "Hillary Soriano",
     producer: "Mark De Leon",
     finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
