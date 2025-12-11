@@ -28,10 +28,10 @@ export function FilmCard({ slug, title, year, image, status, releaseDate }: Film
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           
-          {status === "coming-soon" && (
+          {slug === "lila-exe" && (
             <div className="absolute top-3 left-3">
               <span className="px-2 py-1 text-xs font-medium bg-white/10 backdrop-blur-sm text-white rounded">
-                {releaseDate || "Coming Soon"}
+                Coming Soon
               </span>
             </div>
           )}
