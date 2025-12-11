@@ -12,6 +12,7 @@ const filmOrder = [
   "red-light-teachers",
   "the-handy-man",
   "the-master-chief",
+  "summer-jazz",
 ];
 
 export default function Home() {

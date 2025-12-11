@@ -3,7 +3,7 @@ import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_17607674929
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholder_image.png";
 import masterChiefHeroImage from "@assets/master-chief-still.jpg";
-import summerJazzPlaceholder from "@assets/generated_images/summer_jazz_film_placeholder.png";
+import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import anitaPlaceholder from "@assets/generated_images/anita_film_placeholder_image.png";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
@@ -105,12 +105,13 @@ export const films: Film[] = [
     title: "Summer Jazz",
     year: "2022",
     releaseDate: "2022",
-    director: "Kyle Tims",
-    writer: "Kyle Tims",
-    starring: [],
+    director: "Mark De Leon",
+    writer: "Mark De Leon",
+    starring: ["Roann Mesina", "Shannon Timberlake"],
     synopsis: "",
-    heroImage: summerJazzPlaceholder,
+    heroImage: summerJazzHeroImage,
     status: "library",
+    previewUrl: "https://vimeo.com/1021491462",
   },
   {
     slug: "anita",
