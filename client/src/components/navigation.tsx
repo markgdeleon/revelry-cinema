@@ -11,8 +11,8 @@ export function Navigation() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-[100]">
-        <div className="px-6 md:px-12 lg:px-16 py-4">
+      <header className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
+        <div className="px-6 md:px-12 lg:px-16 py-4 pointer-events-auto">
           <div className="flex items-center justify-between">
             <Button 
               variant="ghost" 

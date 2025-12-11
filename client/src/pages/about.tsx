@@ -1,12 +1,19 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import behindTheScenes from "@assets/A8B0829B-0ADC-446C-81D8-3E53A0CBFD0C_1765494189325.jpg";
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black relative">
+      <div 
+        className="fixed inset-0 bg-cover bg-center opacity-20"
+        style={{ backgroundImage: `url(${behindTheScenes})` }}
+      />
+      <div className="fixed inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+      
       <Navigation />
       
-      <main className="pt-32 pb-20 px-8 md:px-12 lg:px-16">
+      <main className="relative pt-32 pb-20 px-8 md:px-12 lg:px-16">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-12" data-testid="text-page-title">
             About
