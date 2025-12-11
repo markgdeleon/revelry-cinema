@@ -82,7 +82,7 @@ export const films: Film[] = [
     synopsis: "",
     heroImage: revelryHeroImage,
     status: "library",
-    trailerUrl: "https://www.youtube.com/watch?v=sQqm9Yxk_Yg",
+    previewUrl: "https://www.youtube.com/watch?v=sQqm9Yxk_Yg",
   },
   {
     slug: "the-master-chief",
