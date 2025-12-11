@@ -99,10 +99,12 @@ export default function FilmDetail() {
                 <p className="text-white text-lg" data-testid="text-director">{film.director}</p>
               </div>
               
-              <div>
-                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Writer</h3>
-                <p className="text-white text-lg" data-testid="text-writer">{film.writer}</p>
-              </div>
+              {film.writer && (
+                <div>
+                  <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Writer</h3>
+                  <p className="text-white text-lg" data-testid="text-writer">{film.writer}</p>
+                </div>
+              )}
               
               {film.starring.length > 0 && (
                 <div>
