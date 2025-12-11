@@ -2,7 +2,7 @@ import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
 import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholder_image.png";
-import masterChiefPlaceholder from "@assets/generated_images/master_chief_film_placeholder.png";
+import masterChiefHeroImage from "@assets/master-chief-still.jpg";
 import summerJazzPlaceholder from "@assets/generated_images/summer_jazz_film_placeholder.png";
 import anitaPlaceholder from "@assets/generated_images/anita_film_placeholder_image.png";
 
@@ -84,7 +84,7 @@ export const films: Film[] = [
     writer: "",
     starring: ["Chris Soriano", "Georgina Tolentino"],
     synopsis: "",
-    heroImage: masterChiefPlaceholder,
+    heroImage: masterChiefHeroImage,
     status: "library",
     executiveProducer: "Hillary Soriano",
     producer: "Mark De Leon",
