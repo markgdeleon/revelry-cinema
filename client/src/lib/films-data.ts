@@ -18,6 +18,8 @@ export interface Film {
   heroImage: string;
   status: "coming-soon" | "now-available" | "library";
   finePrint?: string;
+  executiveProducer?: string;
+  producer?: string;
 }
 
 export const films: Film[] = [
@@ -56,7 +58,9 @@ export const films: Film[] = [
     synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
     heroImage: redLightTeachersHeroImage,
     status: "coming-soon",
-    finePrint: "Executive Producer Hillary Soriano, Producer Mark De Leon. Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
+    executiveProducer: "Hillary Soriano",
+    producer: "Mark De Leon",
+    finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
   },
   {
     slug: "revelry",

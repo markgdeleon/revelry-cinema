@@ -110,6 +110,20 @@ export default function FilmDetail() {
                   <p className="text-white text-lg" data-testid="text-starring">{film.starring.join(", ")}</p>
                 </div>
               )}
+              
+              {film.executiveProducer && (
+                <div>
+                  <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Executive Producer</h3>
+                  <p className="text-white text-lg" data-testid="text-executive-producer">{film.executiveProducer}</p>
+                </div>
+              )}
+              
+              {film.producer && (
+                <div>
+                  <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Producer</h3>
+                  <p className="text-white text-lg" data-testid="text-producer">{film.producer}</p>
+                </div>
+              )}
             </div>
             
             {film.synopsis && (
