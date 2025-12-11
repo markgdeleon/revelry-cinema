@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { Link } from "wouter";
+import { Menu, X, ArrowLeft } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import logo from "@assets/2_1760762996019.png";
 
 export function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [location] = useLocation();
+  const isHomepage = location === "/";
 
   return (
     <>
@@ -23,18 +25,32 @@ export function Navigation() {
               <span className="sr-only">Menu</span>
             </Button>
             
-            <Link href="/">
-              <button 
-                className="hover:opacity-80 transition-opacity"
-                data-testid="link-home"
-              >
-                <img 
-                  src={logo} 
-                  alt="Revelry Cinema" 
-                  className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto"
-                />
-              </button>
-            </Link>
+            <div className="flex items-center gap-6">
+              <Link href="/">
+                <button 
+                  className="hover:opacity-80 transition-opacity"
+                  data-testid="link-home"
+                >
+                  <img 
+                    src={logo} 
+                    alt="Revelry Cinema" 
+                    className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto"
+                  />
+                </button>
+              </Link>
+              
+              {!isHomepage && (
+                <Link href="/">
+                  <button 
+                    className="hidden md:flex items-center text-white/70 hover:text-white text-sm transition-colors"
+                    data-testid="link-back-nav"
+                  >
+                    <ArrowLeft className="w-4 h-4 mr-1" />
+                    Back to Films
+                  </button>
+                </Link>
+              )}
+            </div>
             
             <nav className="hidden md:flex items-center gap-8">
               <Link href="/about">
