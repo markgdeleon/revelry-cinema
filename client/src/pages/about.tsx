@@ -15,7 +15,7 @@ export default function About() {
           <Link href="/">
             <Button 
               variant="ghost" 
-              className="text-white/70 hover:text-white hover:bg-white/10 mb-8 -ml-4"
+              className="text-white/70 hover:text-white hover:bg-white/10 mb-8 -ml-4 relative z-10"
               data-testid="link-back"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
