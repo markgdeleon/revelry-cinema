@@ -74,8 +74,8 @@ export const films: Film[] = [
   {
     slug: "revelry",
     title: "Revelry",
-    year: "2024",
-    releaseDate: "2024",
+    year: "Coming Soon",
+    releaseDate: "TBA",
     director: "Mark De Leon",
     writer: "Mark De Leon",
     starring: [],
