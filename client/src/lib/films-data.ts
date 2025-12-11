@@ -5,6 +5,7 @@ import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholde
 import masterChiefHeroImage from "@assets/master-chief-still.jpg";
 import summerJazzPlaceholder from "@assets/generated_images/summer_jazz_film_placeholder.png";
 import anitaPlaceholder from "@assets/generated_images/anita_film_placeholder_image.png";
+import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
 export interface Film {
   slug: string;
@@ -22,6 +23,7 @@ export interface Film {
   producer?: string;
   trailerUrl?: string;
   previewUrl?: string;
+  directorOfPhotography?: string;
 }
 
 export const films: Film[] = [
@@ -119,6 +121,21 @@ export const films: Film[] = [
     synopsis: "",
     heroImage: anitaPlaceholder,
     status: "library",
+  },
+  {
+    slug: "as-one",
+    title: "As One",
+    year: "2021",
+    releaseDate: "2021",
+    director: "Gabriel Mayorquin",
+    writer: "Gabriel Mayorquin",
+    starring: ["Bobby Slaski", "Xander Bailey", "Addison Turner"],
+    synopsis: "",
+    heroImage: asOneHeroImage,
+    status: "library",
+    directorOfPhotography: "Mark De Leon",
+    finePrint: "Includes an individual filmmaker credit. The project itself was produced outside of Revelry Cinema.",
+    trailerUrl: "https://www.youtube.com/watch?v=x7_0WYtdsa0",
   },
 ];
 

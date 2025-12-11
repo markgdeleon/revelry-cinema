@@ -154,6 +154,13 @@ export default function FilmDetail() {
                   <p className="text-white text-lg" data-testid="text-producer">{film.producer}</p>
                 </div>
               )}
+              
+              {film.directorOfPhotography && (
+                <div>
+                  <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Director of Photography</h3>
+                  <p className="text-white text-lg" data-testid="text-dop">{film.directorOfPhotography}</p>
+                </div>
+              )}
             </div>
             
             {film.synopsis && (
