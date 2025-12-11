@@ -31,12 +31,12 @@ export default function Contact() {
             <div>
               <h2 className="text-white/50 text-sm uppercase tracking-wider mb-4">Email</h2>
               <a 
-                href="mailto:contact@revelrycinema.com"
+                href="mailto:team@revelrycinema.com"
                 className="text-white text-xl hover:text-white/80 transition-colors inline-flex items-center gap-3"
                 data-testid="link-email"
               >
                 <Mail className="w-5 h-5" />
-                contact@revelrycinema.com
+                team@revelrycinema.com
               </a>
             </div>
             
