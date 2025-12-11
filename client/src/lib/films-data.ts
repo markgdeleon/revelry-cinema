@@ -17,6 +17,7 @@ export interface Film {
   synopsis: string;
   heroImage: string;
   status: "coming-soon" | "now-available" | "library";
+  finePrint?: string;
 }
 
 export const films: Film[] = [
@@ -55,6 +56,7 @@ export const films: Film[] = [
     synopsis: "A desperate immigrant forced into the world of underground strip clubs crosses paths with a disillusioned drama teacher, both rediscover the meaning of dignity, art, and second chances.",
     heroImage: redLightTeachersHeroImage,
     status: "coming-soon",
+    finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
   },
   {
     slug: "revelry",

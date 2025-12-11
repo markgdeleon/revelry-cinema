@@ -120,6 +120,14 @@ export default function FilmDetail() {
                 </p>
               </div>
             )}
+            
+            {film.finePrint && (
+              <div className="mt-12 pt-8 border-t border-white/10">
+                <p className="text-white/40 text-sm italic" data-testid="text-fine-print">
+                  {film.finePrint}
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
