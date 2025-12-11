@@ -31,7 +31,7 @@ export default function About() {
             <img 
               src={slateImage} 
               alt="Revelry Cinema film slate" 
-              className="float-right ml-8 mb-6 w-64 md:w-80 rounded-sm"
+              className="float-right ml-8 mb-6 w-72 md:w-96 lg:w-[28rem] rounded-sm"
               data-testid="img-slate"
             />
             <p>
