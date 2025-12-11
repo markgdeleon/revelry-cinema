@@ -61,16 +61,16 @@ export default function FilmDetail() {
                 {film.title}
               </h1>
               
-              {film.trailerUrl && (
+              {(film.trailerUrl || film.previewUrl) && (
                 <a 
-                  href={film.trailerUrl} 
+                  href={film.trailerUrl || film.previewUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   data-testid="link-trailer"
                 >
                   <Button className="bg-white text-black hover:bg-white/90 gap-2">
                     <Play className="w-4 h-4" />
-                    Watch Trailer
+                    {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
                   </Button>
                 </a>
               )}
@@ -97,16 +97,16 @@ export default function FilmDetail() {
                 {film.title}
               </h1>
               
-              {film.trailerUrl && (
+              {(film.trailerUrl || film.previewUrl) && (
                 <a 
-                  href={film.trailerUrl} 
+                  href={film.trailerUrl || film.previewUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   data-testid="link-trailer"
                 >
                   <Button className="bg-white text-black hover:bg-white/90 gap-2">
                     <Play className="w-4 h-4" />
-                    Watch Trailer
+                    {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
                   </Button>
                 </a>
               )}
