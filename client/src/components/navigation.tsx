@@ -14,6 +14,7 @@ export function Navigation() {
       <header className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
         <div className="px-6 md:px-12 lg:px-16 py-4">
           <div className="flex items-center justify-between">
+            {/* Mobile: Menu on left, logo on right */}
             <Button 
               variant="ghost" 
               size="icon"
@@ -25,7 +26,8 @@ export function Navigation() {
               <span className="sr-only">Menu</span>
             </Button>
             
-            <div className="flex items-center gap-6 pointer-events-auto">
+            {/* Desktop: Logo on left */}
+            <div className="hidden md:flex items-center gap-6 pointer-events-auto">
               <Link href="/">
                 <button 
                   className="hover:opacity-80 transition-opacity"
@@ -34,11 +36,26 @@ export function Navigation() {
                   <img 
                     src={logo} 
                     alt="Revelry Cinema" 
-                    className="w-40 sm:w-48 md:w-56 lg:w-64 h-auto"
+                    className="w-56 lg:w-64 h-auto"
                   />
                 </button>
               </Link>
-              
+            </div>
+            
+            {/* Mobile: Logo on right side */}
+            <div className="md:hidden pointer-events-auto">
+              <Link href="/">
+                <button 
+                  className="hover:opacity-80 transition-opacity"
+                  data-testid="link-home-mobile"
+                >
+                  <img 
+                    src={logo} 
+                    alt="Revelry Cinema" 
+                    className="w-28 h-auto"
+                  />
+                </button>
+              </Link>
             </div>
             
             <nav className="hidden md:flex items-center gap-8 pointer-events-auto">
@@ -53,8 +70,6 @@ export function Navigation() {
                 </span>
               </Link>
             </nav>
-
-            <div className="w-10 md:hidden" />
           </div>
         </div>
       </header>
