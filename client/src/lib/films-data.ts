@@ -4,7 +4,7 @@ import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_17
 import revelryPlaceholder from "@assets/generated_images/revelry_film_placeholder_image.png";
 import masterChiefHeroImage from "@assets/master-chief-still.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
-import anitaPlaceholder from "@assets/generated_images/anita_film_placeholder_image.png";
+import anitaHeroImage from "@assets/anita_4.5.1_1765489740070.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
 export interface Film {
@@ -122,8 +122,9 @@ export const films: Film[] = [
     writer: "Mark De Leon",
     starring: [],
     synopsis: "",
-    heroImage: anitaPlaceholder,
+    heroImage: anitaHeroImage,
     status: "library",
+    trailerUrl: "https://www.youtube.com/watch?v=FYVV0cvHGe8",
   },
   {
     slug: "as-one",
