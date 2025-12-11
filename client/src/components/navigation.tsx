@@ -12,12 +12,12 @@ export function Navigation() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
-        <div className="px-6 md:px-12 lg:px-16 py-4 pointer-events-auto">
+        <div className="px-6 md:px-12 lg:px-16 py-4">
           <div className="flex items-center justify-between">
             <Button 
               variant="ghost" 
               size="icon"
-              className="text-white hover:bg-white/10 md:hidden"
+              className="text-white hover:bg-white/10 md:hidden pointer-events-auto"
               onClick={() => setMenuOpen(!menuOpen)}
               data-testid="button-menu"
             >
@@ -25,7 +25,7 @@ export function Navigation() {
               <span className="sr-only">Menu</span>
             </Button>
             
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 pointer-events-auto">
               <Link href="/">
                 <button 
                   className="hover:opacity-80 transition-opacity"
@@ -41,7 +41,7 @@ export function Navigation() {
               
             </div>
             
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-8 pointer-events-auto">
               <Link href="/about">
                 <span className="text-white/80 hover:text-white text-sm uppercase tracking-wider cursor-pointer transition-colors" data-testid="link-about">
                   About
