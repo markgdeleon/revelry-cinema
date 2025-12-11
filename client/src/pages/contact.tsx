@@ -43,46 +43,34 @@ export default function Contact() {
             <div>
               <h2 className="text-white/50 text-sm uppercase tracking-wider mb-6">Follow Us</h2>
               <div className="flex items-center gap-6">
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors"
-                  data-testid="link-instagram"
+                <span 
+                  className="text-white/50 cursor-default"
+                  data-testid="icon-instagram"
                 >
                   <SiInstagram className="w-8 h-8" />
                   <span className="sr-only">Instagram</span>
-                </a>
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors"
-                  data-testid="link-facebook"
+                </span>
+                <span 
+                  className="text-white/50 cursor-default"
+                  data-testid="icon-facebook"
                 >
                   <SiFacebook className="w-8 h-8" />
                   <span className="sr-only">Facebook</span>
-                </a>
-                <a 
-                  href="https://tiktok.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors"
-                  data-testid="link-tiktok"
+                </span>
+                <span 
+                  className="text-white/50 cursor-default"
+                  data-testid="icon-tiktok"
                 >
                   <SiTiktok className="w-8 h-8" />
                   <span className="sr-only">TikTok</span>
-                </a>
-                <a 
-                  href="https://x.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-white/70 transition-colors"
-                  data-testid="link-x"
+                </span>
+                <span 
+                  className="text-white/50 cursor-default"
+                  data-testid="icon-x"
                 >
                   <SiX className="w-8 h-8" />
                   <span className="sr-only">X</span>
-                </a>
+                </span>
               </div>
             </div>
           </div>
