@@ -3,7 +3,6 @@ import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import slateImage from "@assets/DSC_9401_1765493489915.jpg";
 
 export default function About() {
   return (
@@ -28,12 +27,6 @@ export default function About() {
           </h1>
           
           <div className="space-y-6 text-white/80 text-lg leading-relaxed">
-            <img 
-              src={slateImage} 
-              alt="Revelry Cinema film slate" 
-              className="float-right ml-8 mb-6 w-72 md:w-96 lg:w-[28rem] rounded-sm"
-              data-testid="img-slate"
-            />
             <p>
               Revelry Cinema is a US and Philippines based film and media company focused on elevated genre storytelling, cross cultural narratives, and grounded sci fi with emotional depth. The company develops and produces feature films designed for both domestic and international markets, with a focus on strong characters, cinematic world building, and commercially viable stories.
             </p>

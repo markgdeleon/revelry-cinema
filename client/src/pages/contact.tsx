@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SiInstagram, SiFacebook, SiTiktok, SiX } from "react-icons/si";
+import slateImage from "@assets/DSC_9401_1765493489915.jpg";
 
 export default function Contact() {
   return (
@@ -27,6 +28,15 @@ export default function Contact() {
             Contact
           </h1>
           
+          <div className="mb-12">
+            <img 
+              src={slateImage} 
+              alt="Revelry Cinema film slate" 
+              className="w-full max-w-md rounded-sm"
+              data-testid="img-slate"
+            />
+          </div>
+
           <div className="space-y-12">
             <div>
               <h2 className="text-white/50 text-sm uppercase tracking-wider mb-4">Email</h2>
