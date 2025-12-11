@@ -147,11 +147,6 @@ export default function FilmDetail() {
           <div className="max-w-4xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div>
-                <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Release Date</h3>
-                <p className="text-white text-lg" data-testid="text-release-date">{film.releaseDate}</p>
-              </div>
-              
-              <div>
                 <h3 className="text-white/50 text-sm uppercase tracking-wider mb-2">Director</h3>
                 <p className="text-white text-lg" data-testid="text-director">{film.director}</p>
               </div>
