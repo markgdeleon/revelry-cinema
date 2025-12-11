@@ -20,6 +20,7 @@ export interface Film {
   finePrint?: string;
   executiveProducer?: string;
   producer?: string;
+  trailerUrl?: string;
 }
 
 export const films: Film[] = [
@@ -88,6 +89,7 @@ export const films: Film[] = [
     executiveProducer: "Hillary Soriano",
     producer: "Mark De Leon",
     finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
+    trailerUrl: "https://www.youtube.com/watch?v=mvfyV2md2J8",
   },
   {
     slug: "summer-jazz",

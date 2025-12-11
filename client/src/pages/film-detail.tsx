@@ -3,7 +3,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { CarouselSection } from "@/components/carousel-section";
 import { FilmCard } from "@/components/film-card";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getFilmBySlug, films } from "@/lib/films-data";
 
@@ -57,9 +57,23 @@ export default function FilmDetail() {
                 </Button>
               </Link>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white" data-testid="text-film-title">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6" data-testid="text-film-title">
                 {film.title}
               </h1>
+              
+              {film.trailerUrl && (
+                <a 
+                  href={film.trailerUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  data-testid="link-trailer"
+                >
+                  <Button className="bg-white text-black hover:bg-white/90 gap-2">
+                    <Play className="w-4 h-4" />
+                    Watch Trailer
+                  </Button>
+                </a>
+              )}
             </div>
           </section>
         ) : (
@@ -79,9 +93,23 @@ export default function FilmDetail() {
                 </Button>
               </Link>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white" data-testid="text-film-title">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6" data-testid="text-film-title">
                 {film.title}
               </h1>
+              
+              {film.trailerUrl && (
+                <a 
+                  href={film.trailerUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  data-testid="link-trailer"
+                >
+                  <Button className="bg-white text-black hover:bg-white/90 gap-2">
+                    <Play className="w-4 h-4" />
+                    Watch Trailer
+                  </Button>
+                </a>
+              )}
             </div>
           </section>
         )}
