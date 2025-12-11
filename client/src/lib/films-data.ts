@@ -43,7 +43,7 @@ export const films: Film[] = [
   {
     slug: "the-handy-man",
     title: "The Handy Man",
-    year: "Coming Soon",
+    year: "",
     releaseDate: "TBA",
     director: "Chris Soriano",
     writer: "Chris Soriano",
@@ -74,7 +74,7 @@ export const films: Film[] = [
   {
     slug: "revelry",
     title: "Revelry",
-    year: "Coming Soon",
+    year: "",
     releaseDate: "TBA",
     director: "Mark De Leon",
     writer: "Mark De Leon, Kenan Eames",

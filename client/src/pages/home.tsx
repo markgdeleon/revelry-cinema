@@ -51,6 +51,11 @@ export default function Home() {
                 <p className="text-white/60 text-lg md:text-xl" data-testid={`text-director-${film!.slug}`}>
                   Directed by {film!.director}
                 </p>
+                {film!.slug === "lila-exe" && (
+                  <p className="text-white/40 text-sm mt-2" data-testid="text-coming-soon">
+                    Coming Soon
+                  </p>
+                )}
               </div>
             </section>
           </Link>
