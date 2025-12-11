@@ -1,4 +1,4 @@
-import lilaHeroImage from "@assets/nadine lustre_1760766907028.webp";
+import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
 import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryHeroImage from "@assets/alley_1.1.4_1765491246067.jpg";
