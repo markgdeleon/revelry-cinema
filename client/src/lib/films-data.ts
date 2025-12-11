@@ -65,6 +65,7 @@ export const films: Film[] = [
     executiveProducer: "Hillary Soriano",
     producer: "Mark De Leon",
     finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
+    trailerUrl: "https://www.youtube.com/watch?v=GVdNcXw_Nm8",
   },
   {
     slug: "revelry",
