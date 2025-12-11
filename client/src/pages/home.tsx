@@ -29,7 +29,7 @@ export default function Home() {
           <Link href={`/film/${film!.slug}`} key={film!.slug}>
             <section 
               className={`relative w-full overflow-hidden cursor-pointer group ${
-                index === 0 ? 'pt-6 md:pt-0 md:h-screen' : 'md:h-[80vh]'
+                index === 0 ? 'pt-2 md:pt-0 md:h-screen' : 'md:h-[80vh]'
               }`}
               data-testid={`hero-section-${film!.slug}`}
             >
