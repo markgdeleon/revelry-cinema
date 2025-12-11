@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import slateImage from "@assets/DSC_9401_1765493489915.jpg";
 
 export default function About() {
   return (
@@ -26,9 +27,14 @@ export default function About() {
             About
           </h1>
           
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
-            ABOUT REVELRY CINEMA
-          </h2>
+          <div className="mb-12">
+            <img 
+              src={slateImage} 
+              alt="Revelry Cinema film slate" 
+              className="w-full max-w-lg rounded-sm"
+              data-testid="img-slate"
+            />
+          </div>
           
           <div className="space-y-6 text-white/80 text-lg leading-relaxed">
             <p>
