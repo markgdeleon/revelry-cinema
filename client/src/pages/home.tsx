@@ -47,14 +47,9 @@ export default function Home() {
                 >
                   {film!.title}
                 </h2>
-                <p className="text-white/60 text-lg md:text-xl" data-testid={`text-year-${film!.slug}`}>
-                  {film!.year}
+                <p className="text-white/60 text-lg md:text-xl" data-testid={`text-director-${film!.slug}`}>
+                  Directed by {film!.director}
                 </p>
-                {film!.status === "coming-soon" && film!.releaseDate && film!.releaseDate !== "TBA" && (
-                  <p className="text-white/40 text-sm mt-2" data-testid={`text-release-${film!.slug}`}>
-                    {film!.releaseDate}
-                  </p>
-                )}
               </div>
             </section>
           </Link>
