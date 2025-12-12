@@ -106,7 +106,7 @@ export const films: Film[] = [
     director: "Mark De Leon",
     writer: "Mark De Leon",
     starring: ["Riley Elyse", "Katrina Nicole"],
-    synopsis: "",
+    synopsis: "A desperate scientist attempts to save his dying daughter by overwriting her consciousness into a young girl that sets off a chain of events leaving both girls fighting for their lives and futures.",
     heroImage: anitaHeroImage,
     status: "library",
     trailerUrl: "https://www.youtube.com/watch?v=FYVV0cvHGe8",
