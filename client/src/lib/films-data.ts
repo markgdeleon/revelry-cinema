@@ -6,7 +6,7 @@ import masterChiefHeroImage from "@assets/TMCstills_1.22.1_2_1765518854460.jpg";
 import masterChiefMobileHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
-import anitaHeroImage from "@assets/Anita_4.19.1_1765518958684.jpg";
+import anitaHeroImage from "@assets/EC03B4F0-ED4E-413A-9CDD-5359344A07F1_1765520254653.jpg";
 import anitaMobileHeroImage from "@assets/day_3_1.1.7_1765519048369.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
