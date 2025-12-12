@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getFilmBySlug } from "@/lib/films-data";
@@ -20,10 +20,28 @@ export default function Home() {
     .filter(Boolean);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const touchStartY = useRef<number | null>(null);
   const touchEndY = useRef<number | null>(null);
 
   const minSwipeDistance = 50;
+
+  // Lock body scroll on mobile
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+      document.body.style.height = '100%';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+      document.body.style.height = '';
+    };
+  }, []);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchEndY.current = null;
@@ -35,17 +53,21 @@ export default function Home() {
   };
 
   const handleTouchEnd = () => {
-    if (!touchStartY.current || !touchEndY.current) return;
+    if (!touchStartY.current || !touchEndY.current || isTransitioning) return;
     
     const distance = touchStartY.current - touchEndY.current;
     const isUpSwipe = distance > minSwipeDistance;
     const isDownSwipe = distance < -minSwipeDistance;
 
     if (isUpSwipe && currentIndex < orderedFilms.length - 1) {
+      setIsTransitioning(true);
       setCurrentIndex(prev => prev + 1);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
     if (isDownSwipe && currentIndex > 0) {
+      setIsTransitioning(true);
       setCurrentIndex(prev => prev - 1);
+      setTimeout(() => setIsTransitioning(false), 600);
     }
 
     touchStartY.current = null;
@@ -65,19 +87,21 @@ export default function Home() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Stacked images - slide vertically */}
+        {/* Stacked images - cinematic crossfade with scale */}
         {orderedFilms.map((film, index) => {
-          let translateY = '0%';
-          if (index < currentIndex) translateY = '-100%';
-          if (index > currentIndex) translateY = '100%';
+          const isActive = index === currentIndex;
           
           return (
-            <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
-              <div 
-                className="absolute inset-0 transition-transform duration-500 ease-out"
-                style={{ transform: `translateY(${translateY})` }}
-                data-testid={`mobile-slide-${film!.slug}`}
-              >
+            <div 
+              key={film!.slug}
+              className={`absolute inset-0 transition-all duration-700 ease-out ${
+                isActive 
+                  ? 'opacity-100 scale-100 z-10' 
+                  : 'opacity-0 scale-105 z-0'
+              }`}
+              data-testid={`mobile-slide-${film!.slug}`}
+            >
+              <Link href={`/film/${film!.slug}`} className="block absolute inset-0">
                 <img 
                   src={film!.heroImage} 
                   alt={film!.title}
@@ -85,8 +109,8 @@ export default function Home() {
                 />
                 {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
 
