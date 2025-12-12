@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useParams, Link } from "wouter";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { CarouselSection } from "@/components/carousel-section";
 import { FilmCard } from "@/components/film-card";
+import { VideoModal } from "@/components/video-modal";
 import { ArrowLeft, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { getFilmBySlug, films } from "@/lib/films-data";
@@ -12,6 +14,13 @@ export default function FilmDetail() {
   const params = useParams();
   const filmSlug = params.slug as string;
   const film = getFilmBySlug(filmSlug);
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [currentVideoUrl, setCurrentVideoUrl] = useState("");
+
+  const openVideoModal = (url: string) => {
+    setCurrentVideoUrl(url);
+    setVideoModalOpen(true);
+  };
 
   if (!film) {
     return (
@@ -78,17 +87,15 @@ export default function FilmDetail() {
                     </a>
                   )}
                   {(film.trailerUrl || film.previewUrl) && (
-                    <a 
-                      href={film.trailerUrl || film.previewUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      data-testid="link-trailer"
+                    <Button 
+                      variant="outline" 
+                      className="border-white/30 text-white hover:bg-white/10 gap-2"
+                      onClick={() => openVideoModal(film.trailerUrl || film.previewUrl || "")}
+                      data-testid="button-trailer"
                     >
-                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2">
-                        <Play className="w-4 h-4" />
-                        {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
-                      </Button>
-                    </a>
+                      <Play className="w-4 h-4" />
+                      {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
+                    </Button>
                   )}
                 </div>
               )}
@@ -145,17 +152,15 @@ export default function FilmDetail() {
                     </a>
                   )}
                   {(film.trailerUrl || film.previewUrl) && (
-                    <a 
-                      href={film.trailerUrl || film.previewUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      data-testid="link-trailer"
+                    <Button 
+                      variant="outline" 
+                      className="border-white/30 text-white hover:bg-white/10 gap-2"
+                      onClick={() => openVideoModal(film.trailerUrl || film.previewUrl || "")}
+                      data-testid="button-trailer"
                     >
-                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2">
-                        <Play className="w-4 h-4" />
-                        {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
-                      </Button>
-                    </a>
+                      <Play className="w-4 h-4" />
+                      {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
+                    </Button>
                   )}
                 </div>
               )}
@@ -257,6 +262,13 @@ export default function FilmDetail() {
       </main>
       
       <Footer />
+      
+      <VideoModal
+        isOpen={videoModalOpen}
+        onClose={() => setVideoModalOpen(false)}
+        videoUrl={currentVideoUrl}
+        title={film?.title}
+      />
     </div>
   );
 }
