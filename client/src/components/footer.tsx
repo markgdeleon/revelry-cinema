@@ -29,13 +29,16 @@ export function Footer() {
               <SiFacebook className="w-5 h-5" />
               <span className="sr-only">Facebook</span>
             </span>
-            <span 
-              className="text-white/50 cursor-default"
-              data-testid="icon-tiktok"
+            <a 
+              href="https://www.tiktok.com/@revelrycinema"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white transition-colors"
+              data-testid="link-tiktok"
             >
               <SiTiktok className="w-5 h-5" />
               <span className="sr-only">TikTok</span>
-            </span>
+            </a>
             <span 
               className="text-white/50 cursor-default"
               data-testid="icon-x"
