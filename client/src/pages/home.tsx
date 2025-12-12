@@ -26,7 +26,7 @@ export default function Home() {
       
       <main className="relative">
         {orderedFilms.map((film, index) => (
-          <Link href={`/film/${film!.slug}`} key={film!.slug}>
+          <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
             <section 
               className={`relative w-full overflow-hidden cursor-pointer group ${
                 index === 0 ? 'md:min-h-screen' : 'md:h-[80vh]'
