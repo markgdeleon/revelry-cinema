@@ -12,13 +12,16 @@ export function Footer() {
           </p>
           
           <div className="flex items-center gap-6">
-            <span 
-              className="text-white/50 cursor-default"
-              data-testid="icon-instagram"
+            <a 
+              href="https://www.instagram.com/revelry_cinema/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/50 hover:text-white transition-colors"
+              data-testid="link-instagram"
             >
               <SiInstagram className="w-5 h-5" />
               <span className="sr-only">Instagram</span>
-            </span>
+            </a>
             <span 
               className="text-white/50 cursor-default"
               data-testid="icon-facebook"
