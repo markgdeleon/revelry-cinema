@@ -6,7 +6,8 @@ import masterChiefHeroImage from "@assets/TMCstills_1.22.1_2_1765518854460.jpg";
 import masterChiefMobileHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
-import anitaHeroImage from "@assets/Anita_4.14.2_1765515604005.jpg";
+import anitaHeroImage from "@assets/Anita_4.19.1_1765518958684.jpg";
+import anitaMobileHeroImage from "@assets/Anita_4.14.2_1765515604005.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
 export interface Film {
@@ -115,6 +116,7 @@ export const films: Film[] = [
     starring: ["Riley Elyse", "Katrina Nicole"],
     synopsis: "A desperate scientist attempts to save his dying daughter by overwriting her consciousness into a young girl that sets off a chain of events leaving both girls fighting for their lives and futures.",
     heroImage: anitaHeroImage,
+    mobileHeroImage: anitaMobileHeroImage,
     status: "library",
     trailerUrl: "https://www.youtube.com/watch?v=FYVV0cvHGe8",
   },
