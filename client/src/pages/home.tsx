@@ -131,7 +131,7 @@ export default function Home() {
               {currentFilm!.title}
             </h2>
             <p className="text-white/70 text-lg">
-              Directed by {currentFilm!.director}
+              {currentFilm!.year}
             </p>
           </Link>
         </div>
@@ -179,14 +179,9 @@ export default function Home() {
                 >
                   {film!.title}
                 </h2>
-                <p className="text-white/60 text-lg md:text-xl" data-testid={`text-director-${film!.slug}`}>
-                  Directed by {film!.director}
+                <p className="text-white/60 text-lg md:text-xl" data-testid={`text-year-${film!.slug}`}>
+                  {film!.year}
                 </p>
-                {film!.slug === "lila-exe" && (
-                  <p className="text-white/40 text-sm mt-2" data-testid="text-coming-soon">
-                    Coming Soon
-                  </p>
-                )}
               </div>
             </section>
           </Link>
