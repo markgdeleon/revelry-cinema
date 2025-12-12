@@ -35,7 +35,7 @@ export default function Home() {
               <img 
                 src={film!.heroImage} 
                 alt={film!.title}
-                className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:object-center md:scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40]"
+                className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:object-[center_25%] md:scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40]"
               />
               <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
