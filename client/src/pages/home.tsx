@@ -106,7 +106,7 @@ export default function Home() {
                   src={film!.mobileHeroImage || film!.heroImage} 
                   alt={film!.title}
                   className={`absolute inset-0 w-full h-full object-cover scale-[1.35] ${
-                    film!.slug === 'summer-jazz' || film!.slug === 'anita' ? 'object-[40%_35%]' : 'object-[center_35%]'
+                    film!.slug === 'summer-jazz' ? 'object-[40%_35%]' : film!.slug === 'anita' ? 'object-[15%_35%]' : 'object-[center_35%]'
                   }`}
                 />
                 {/* Gradient overlay */}
