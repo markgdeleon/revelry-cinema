@@ -11,7 +11,6 @@ const filmOrder = [
   "summer-jazz",
   "as-one",
   "red-light-teachers",
-  "the-handy-man",
   "the-master-chief",
 ];
 
