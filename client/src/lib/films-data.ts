@@ -93,7 +93,7 @@ export const films: Film[] = [
     director: "Mark De Leon",
     writer: "Mark De Leon",
     starring: ["Roann Mesina", "Shannon Timberlake"],
-    synopsis: "",
+    synopsis: "When a night of friendship, desire, and resentment erupts into violence, a young woman trapped inside her own imagination must face the truth before silence becomes fatal.",
     heroImage: summerJazzHeroImage,
     status: "library",
     previewUrl: "https://vimeo.com/1021491462",
