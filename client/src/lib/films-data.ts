@@ -1,6 +1,7 @@
 import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
-import revelryHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
+import revelryHeroImage from "@assets/alley_1.1.4_1765518661874.JPG";
+import revelryMobileHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
 import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
@@ -67,6 +68,7 @@ export const films: Film[] = [
     starring: ["Kenan Eames", "Riley Elyse", "Sammy Cantu", "Roann Mesina"],
     synopsis: "In the face of loss and adversity, a Filipino Navy veteran's life takes an unexpected turn when a dream reunites him with his grandmother's spirit.",
     heroImage: revelryHeroImage,
+    mobileHeroImage: revelryMobileHeroImage,
     status: "library",
     previewUrl: "https://www.youtube.com/watch?v=sQqm9Yxk_Yg",
   },
