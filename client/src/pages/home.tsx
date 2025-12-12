@@ -65,25 +65,30 @@ export default function Home() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Stacked images - only currentIndex is visible */}
-        {orderedFilms.map((film, index) => (
-          <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
-            <div 
-              className={`absolute inset-0 transition-opacity duration-500 ${
-                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-              }`}
-              data-testid={`mobile-slide-${film!.slug}`}
-            >
-              <img 
-                src={film!.heroImage} 
-                alt={film!.title}
-                className="absolute inset-0 w-full h-full object-cover object-center"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-            </div>
-          </Link>
-        ))}
+        {/* Stacked images - slide vertically */}
+        {orderedFilms.map((film, index) => {
+          let translateY = '0%';
+          if (index < currentIndex) translateY = '-100%';
+          if (index > currentIndex) translateY = '100%';
+          
+          return (
+            <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
+              <div 
+                className="absolute inset-0 transition-transform duration-500 ease-out"
+                style={{ transform: `translateY(${translateY})` }}
+                data-testid={`mobile-slide-${film!.slug}`}
+              >
+                <img 
+                  src={film!.heroImage} 
+                  alt={film!.title}
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              </div>
+            </Link>
+          );
+        })}
 
         {/* Fixed navigation overlay - always on top */}
         <div className="absolute top-0 left-0 right-0 z-20 pointer-events-none">
