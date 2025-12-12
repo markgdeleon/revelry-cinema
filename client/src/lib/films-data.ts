@@ -1,5 +1,4 @@
 import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
-import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
 import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
@@ -39,21 +38,6 @@ export const films: Film[] = [
     synopsis: "After her twin sister's death, a U.S Navy medical officer helps a biotech giant birth a human avatar seeded with her sister's voice. When courts move to seize and erase the being now known as Lila, Emma must decide if saving a life she helped create means breaking every oath she swore.",
     heroImage: lilaHeroImage,
     status: "coming-soon",
-  },
-  {
-    slug: "the-handy-man",
-    title: "The Handy Man",
-    year: "",
-    releaseDate: "TBA",
-    director: "Chris Soriano",
-    writer: "Chris Soriano",
-    starring: ["Chris Soriano", "Jaime Gray"],
-    synopsis: "A broken man and a determined woman fight over a crumbling italian villa and end up restoring each other instead.",
-    heroImage: handyManHeroImage,
-    status: "coming-soon",
-    executiveProducer: "Hillary Soriano",
-    producer: "Mark De Leon",
-    finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
   },
   {
     slug: "red-light-teachers",
