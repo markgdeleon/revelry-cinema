@@ -9,6 +9,7 @@ import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_17
 import anitaHeroImage from "@assets/EC03B4F0-ED4E-413A-9CDD-5359344A07F1_1765520254653.jpg";
 import anitaMobileHeroImage from "@assets/day_3_1.1.7_1765519048369.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
+import asOneMobileHeroImage from "@assets/IMG_8837_1765575668920.jpeg";
 
 export interface Film {
   slug: string;
@@ -104,6 +105,7 @@ export const films: Film[] = [
     starring: ["Bobby Slaski", "Xander Bailey", "Addison Turner"],
     synopsis: "",
     heroImage: asOneHeroImage,
+    mobileHeroImage: asOneMobileHeroImage,
     status: "library",
     directorOfPhotography: "Mark De Leon",
     finePrint: "Includes an individual filmmaker credit. The project itself was produced outside of Revelry Cinema.",
