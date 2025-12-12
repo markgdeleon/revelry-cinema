@@ -164,7 +164,7 @@ export default function Home() {
                 alt={film!.title}
                 className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${
                   film!.slug === 'revelry' 
-                    ? 'scale-[1.6] object-[center_35%] group-hover:scale-[1.65]' 
+                    ? 'scale-[2] object-center group-hover:scale-[2.05]' 
                     : 'scale-[1.35] object-[center_35%] group-hover:scale-[1.40]'
                 }`}
               />
