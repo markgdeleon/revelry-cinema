@@ -21,20 +21,14 @@ export function FilmCard({ slug, title, year, image, status, releaseDate }: Film
             <img
               src={image}
               alt={title}
-              className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 group-hover:brightness-110"
+              className={`w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 ${
+                slug === "lila-exe" ? "scale-[1.6] group-hover:scale-[1.65]" : "group-hover:scale-105"
+              }`}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-zinc-800 via-zinc-700 to-zinc-900" />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          
-          {slug === "lila-exe" && (
-            <div className="absolute top-3 left-3">
-              <span className="px-2 py-1 text-xs font-medium bg-white/10 backdrop-blur-sm text-white rounded">
-                Coming Soon
-              </span>
-            </div>
-          )}
           
           <div className="absolute bottom-0 left-0 right-0 p-4">
             <h3 className="text-white font-semibold text-lg leading-tight" data-testid={`text-film-title-${slug}`}>
