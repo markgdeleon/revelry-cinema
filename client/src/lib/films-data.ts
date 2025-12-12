@@ -2,7 +2,7 @@ import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
 import handyManHeroImage from "@assets/Still_2025-03-05_213435_1.1.2_1760767492927.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryHeroImage from "@assets/alley_1.1.4_1765491246067.jpg";
-import masterChiefHeroImage from "@assets/master-chief-still.jpg";
+import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import anitaHeroImage from "@assets/anita_4.5.1_1765489740070.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
