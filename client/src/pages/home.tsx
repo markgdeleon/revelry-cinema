@@ -164,11 +164,11 @@ export default function Home() {
                 alt={film!.title}
                 className="absolute inset-0 w-full h-full object-cover object-[center_35%] scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
               
               {/* Desktop: overlay text */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 lg:p-16">
+              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-8 lg:p-10">
                 <h2 
                   className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-2 transition-transform duration-300 group-hover:translate-x-2"
                   data-testid={`text-title-${film!.slug}`}
