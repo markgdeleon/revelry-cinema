@@ -63,7 +63,7 @@ export const films: Film[] = [
     director: "Mark De Leon",
     writer: "Mark De Leon, Kenan Eames",
     starring: ["Kenan Eames", "Riley Elyse", "Sammy Cantu", "Roann Mesina"],
-    synopsis: "",
+    synopsis: "In the face of loss and adversity, a Filipino Navy veteran's life takes an unexpected turn when a dream reunites him with his grandmother's spirit.",
     heroImage: revelryHeroImage,
     status: "library",
     previewUrl: "https://www.youtube.com/watch?v=sQqm9Yxk_Yg",
