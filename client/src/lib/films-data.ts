@@ -1,6 +1,6 @@
 import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
-import revelryHeroImage from "@assets/Stills_1.1.1_1.1.1_1765520732044.jpg";
+import revelryHeroImage from "@assets/Pick_up_shots_1.1.1_1765521741973.jpg";
 import revelryMobileHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
 import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.527.1_1765521316736.jpg";
 import masterChiefMobileHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
