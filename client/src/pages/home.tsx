@@ -162,9 +162,7 @@ export default function Home() {
               <img 
                 src={film!.heroImage} 
                 alt={film!.title}
-                className={`absolute inset-0 w-full h-full object-cover scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40] ${
-                  film!.slug === 'revelry' ? 'object-[center_50%]' : 'object-[center_35%]'
-                }`}
+                className="absolute inset-0 w-full h-full object-cover object-[center_35%] scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
