@@ -7,7 +7,7 @@ import masterChiefMobileHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_17
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
 import anitaHeroImage from "@assets/Anita_4.19.1_1765518958684.jpg";
-import anitaMobileHeroImage from "@assets/Anita_4.14.2_1765515604005.jpg";
+import anitaMobileHeroImage from "@assets/day_3_1.1.7_1765519048369.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
 export interface Film {
