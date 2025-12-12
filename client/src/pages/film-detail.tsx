@@ -62,18 +62,35 @@ export default function FilmDetail() {
                 {film.title}
               </h1>
               
-              {(film.trailerUrl || film.previewUrl) && (
-                <a 
-                  href={film.trailerUrl || film.previewUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  data-testid="link-trailer"
-                >
-                  <Button className="bg-white text-black hover:bg-white/90 gap-2">
-                    <Play className="w-4 h-4" />
-                    {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
-                  </Button>
-                </a>
+              {(film.trailerUrl || film.previewUrl || film.watchUrl) && (
+                <div className="flex items-center gap-4">
+                  {film.watchUrl && (
+                    <a 
+                      href={film.watchUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      data-testid="link-watch"
+                    >
+                      <Button className="bg-white text-black hover:bg-white/90 gap-2">
+                        <Play className="w-4 h-4" />
+                        Watch Now
+                      </Button>
+                    </a>
+                  )}
+                  {(film.trailerUrl || film.previewUrl) && (
+                    <a 
+                      href={film.trailerUrl || film.previewUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      data-testid="link-trailer"
+                    >
+                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2">
+                        <Play className="w-4 h-4" />
+                        {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
+                      </Button>
+                    </a>
+                  )}
+                </div>
               )}
               
               {film.streamingOn && film.streamingOn.length > 0 && (
@@ -112,18 +129,35 @@ export default function FilmDetail() {
                 {film.title}
               </h1>
               
-              {(film.trailerUrl || film.previewUrl) && (
-                <a 
-                  href={film.trailerUrl || film.previewUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  data-testid="link-trailer"
-                >
-                  <Button className="bg-white text-black hover:bg-white/90 gap-2">
-                    <Play className="w-4 h-4" />
-                    {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
-                  </Button>
-                </a>
+              {(film.trailerUrl || film.previewUrl || film.watchUrl) && (
+                <div className="flex items-center gap-4">
+                  {film.watchUrl && (
+                    <a 
+                      href={film.watchUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      data-testid="link-watch"
+                    >
+                      <Button className="bg-white text-black hover:bg-white/90 gap-2">
+                        <Play className="w-4 h-4" />
+                        Watch Now
+                      </Button>
+                    </a>
+                  )}
+                  {(film.trailerUrl || film.previewUrl) && (
+                    <a 
+                      href={film.trailerUrl || film.previewUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      data-testid="link-trailer"
+                    >
+                      <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 gap-2">
+                        <Play className="w-4 h-4" />
+                        {film.previewUrl ? "Watch Preview" : "Watch Trailer"}
+                      </Button>
+                    </a>
+                  )}
+                </div>
               )}
               
               {film.streamingOn && film.streamingOn.length > 0 && (

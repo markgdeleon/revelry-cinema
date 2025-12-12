@@ -27,6 +27,7 @@ export interface Film {
   producer?: string;
   trailerUrl?: string;
   previewUrl?: string;
+  watchUrl?: string;
   directorOfPhotography?: string;
   streamingOn?: string[];
 }
@@ -90,6 +91,7 @@ export const films: Film[] = [
     producer: "Mark De Leon",
     finePrint: "Includes an individual producer credit. The project itself was produced outside of Revelry Cinema.",
     trailerUrl: "https://www.youtube.com/watch?v=mvfyV2md2J8",
+    watchUrl: "https://www.amazon.com/gp/video/detail/B0CJQDX42H/ref=atv_dl_rdr?deepLinkingRedirect=1&autoplay=1",
     streamingOn: ["Amazon Prime", "Apple TV"],
   },
   {
