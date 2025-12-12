@@ -1,4 +1,4 @@
-import { SiInstagram, SiFacebook, SiTiktok, SiX } from "react-icons/si";
+import { SiInstagram, SiTiktok } from "react-icons/si";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,13 +22,6 @@ export function Footer() {
               <SiInstagram className="w-5 h-5" />
               <span className="sr-only">Instagram</span>
             </a>
-            <span 
-              className="text-white/50 cursor-default"
-              data-testid="icon-facebook"
-            >
-              <SiFacebook className="w-5 h-5" />
-              <span className="sr-only">Facebook</span>
-            </span>
             <a 
               href="https://www.tiktok.com/@revelrycinema"
               target="_blank"
@@ -39,13 +32,6 @@ export function Footer() {
               <SiTiktok className="w-5 h-5" />
               <span className="sr-only">TikTok</span>
             </a>
-            <span 
-              className="text-white/50 cursor-default"
-              data-testid="icon-x"
-            >
-              <SiX className="w-5 h-5" />
-              <span className="sr-only">X</span>
-            </span>
           </div>
         </div>
       </div>
