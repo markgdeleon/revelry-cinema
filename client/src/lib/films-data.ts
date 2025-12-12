@@ -106,7 +106,7 @@ export const films: Film[] = [
     heroImage: summerJazzHeroImage,
     mobileHeroImage: summerJazzMobileHeroImage,
     status: "library",
-    previewUrl: "https://vimeo.com/1021491462",
+    trailerUrl: "https://youtu.be/_8fFwtt_9m8",
   },
   {
     slug: "anita",
