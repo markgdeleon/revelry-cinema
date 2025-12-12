@@ -2,7 +2,8 @@ import lilaHeroImage from "@assets/day_3_1.1.5_1765492533895.jpg";
 import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_1760767953179.jpg";
 import revelryHeroImage from "@assets/alley_1.1.4_1765518661874.jpg";
 import revelryMobileHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
-import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
+import masterChiefHeroImage from "@assets/TMCstills_1.22.1_2_1765518854460.jpg";
+import masterChiefMobileHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
 import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
 import anitaHeroImage from "@assets/Anita_4.14.2_1765515604005.jpg";
@@ -82,6 +83,7 @@ export const films: Film[] = [
     starring: ["Chris Soriano", "Georgina Tolentino"],
     synopsis: "",
     heroImage: masterChiefHeroImage,
+    mobileHeroImage: masterChiefMobileHeroImage,
     status: "now-available",
     executiveProducer: "Hillary Soriano",
     producer: "Mark De Leon",
