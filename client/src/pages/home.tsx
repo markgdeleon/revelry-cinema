@@ -129,7 +129,7 @@ export default function Home() {
               {currentFilm!.title}
             </h2>
             <p className="text-white/70 text-lg">
-              {currentFilm!.year}
+              Directed by {currentFilm!.director}
             </p>
           </Link>
         </div>
