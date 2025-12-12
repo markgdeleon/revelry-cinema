@@ -162,7 +162,11 @@ export default function Home() {
               <img 
                 src={film!.heroImage} 
                 alt={film!.title}
-                className="absolute inset-0 w-full h-full object-cover object-[center_35%] scale-[1.35] transition-transform duration-700 group-hover:scale-[1.40]"
+                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ${
+                  film!.slug === 'anita' 
+                    ? 'scale-[1.6] object-[center_40%] group-hover:scale-[1.65]' 
+                    : 'scale-[1.35] object-[center_35%] group-hover:scale-[1.40]'
+                }`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
