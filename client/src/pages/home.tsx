@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { getFilmBySlug } from "@/lib/films-data";
@@ -20,24 +20,37 @@ export default function Home() {
     .filter(Boolean);
 
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const touchStartY = useRef<number | null>(null);
+  const touchEndY = useRef<number | null>(null);
 
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    if (!container) return;
+  const minSwipeDistance = 50;
 
-    const handleScroll = () => {
-      const scrollTop = container.scrollTop;
-      const slideHeight = container.clientHeight;
-      const newIndex = Math.round(scrollTop / slideHeight);
-      if (newIndex !== currentIndex && newIndex >= 0 && newIndex < orderedFilms.length) {
-        setCurrentIndex(newIndex);
-      }
-    };
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchEndY.current = null;
+    touchStartY.current = e.targetTouches[0].clientY;
+  };
 
-    container.addEventListener('scroll', handleScroll);
-    return () => container.removeEventListener('scroll', handleScroll);
-  }, [currentIndex, orderedFilms.length]);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndY.current = e.targetTouches[0].clientY;
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartY.current || !touchEndY.current) return;
+    
+    const distance = touchStartY.current - touchEndY.current;
+    const isUpSwipe = distance > minSwipeDistance;
+    const isDownSwipe = distance < -minSwipeDistance;
+
+    if (isUpSwipe && currentIndex < orderedFilms.length - 1) {
+      setCurrentIndex(prev => prev + 1);
+    }
+    if (isDownSwipe && currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
+    }
+
+    touchStartY.current = null;
+    touchEndY.current = null;
+  };
 
   const currentFilm = orderedFilms[currentIndex];
 
@@ -45,36 +58,43 @@ export default function Home() {
     <div className="min-h-screen bg-black">
       <Navigation />
       
-      {/* Mobile: Full-screen snap carousel */}
-      <div className="md:hidden fixed inset-0 bg-black">
-        {/* Scrollable image container */}
-        <div 
-          ref={scrollContainerRef}
-          className="h-full w-full overflow-y-auto snap-y snap-mandatory hide-scrollbar"
-        >
-          {orderedFilms.map((film, index) => (
-            <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
-              <div 
-                className="h-screen w-full snap-start snap-always relative"
-                data-testid={`mobile-slide-${film!.slug}`}
-              >
-                <img 
-                  src={film!.heroImage} 
-                  alt={film!.title}
-                  className="absolute inset-0 w-full h-full object-cover object-center"
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              </div>
-            </Link>
-          ))}
+      {/* Mobile: Fixed full-screen carousel with swipe gestures */}
+      <div 
+        className="md:hidden fixed inset-0 bg-black touch-none"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Stacked images - only currentIndex is visible */}
+        {orderedFilms.map((film, index) => (
+          <Link href={`/film/${film!.slug}`} key={film!.slug} className="block">
+            <div 
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+              data-testid={`mobile-slide-${film!.slug}`}
+            >
+              <img 
+                src={film!.heroImage} 
+                alt={film!.title}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+            </div>
+          </Link>
+        ))}
+
+        {/* Fixed navigation overlay - always on top */}
+        <div className="absolute top-0 left-0 right-0 z-20 pointer-events-none">
+          <Navigation />
         </div>
 
-        {/* Fixed film info overlay */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 pb-12 pointer-events-none">
-          <Link href={`/film/${currentFilm!.slug}`} className="pointer-events-auto">
+        {/* Fixed film info overlay at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 pb-10 z-20 pointer-events-none">
+          <Link href={`/film/${currentFilm!.slug}`} className="pointer-events-auto inline-block">
             <h2 
-              className="text-4xl font-bold text-white mb-1"
+              className="text-4xl font-bold text-white mb-1 transition-all duration-300"
               data-testid="mobile-current-title"
             >
               {currentFilm!.title}
@@ -85,12 +105,12 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Position indicator */}
-        <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2">
+        {/* Position indicator on right side */}
+        <div className="absolute right-6 top-1/2 -translate-y-1/2 z-20 flex flex-col items-center gap-2">
           <span className="text-white/80 text-sm font-medium">{currentIndex + 1}</span>
-          <div className="w-px h-8 bg-white/30 relative">
+          <div className="w-px h-12 bg-white/30 relative overflow-hidden">
             <div 
-              className="absolute top-0 left-0 w-full bg-white transition-all duration-300"
+              className="absolute top-0 left-0 w-full bg-white transition-all duration-500 ease-out"
               style={{ height: `${((currentIndex + 1) / orderedFilms.length) * 100}%` }}
             />
           </div>
