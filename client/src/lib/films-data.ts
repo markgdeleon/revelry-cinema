@@ -3,6 +3,7 @@ import redLightTeachersHeroImage from "@assets/Still_2024-11-24_133853_1.1.10_17
 import revelryHeroImage from "@assets/Stills_1.1.1_1.13.1_1765516206668.jpg";
 import masterChiefHeroImage from "@assets/TMC_STILLS_POWERGRADE_1.326.1_1765515464282.jpg";
 import summerJazzHeroImage from "@assets/kiss_sample_1.1.1_1765488776588.png";
+import summerJazzMobileHeroImage from "@assets/Still_2025-01-15_231323_1.20.1_1765518408790.jpg";
 import anitaHeroImage from "@assets/Anita_4.14.2_1765515604005.jpg";
 import asOneHeroImage from "@assets/Screenshot_2025-12-11_at_12.57.16_PM_1765486643825.png";
 
@@ -16,6 +17,7 @@ export interface Film {
   starring: string[];
   synopsis: string;
   heroImage: string;
+  mobileHeroImage?: string;
   status: "coming-soon" | "now-available" | "library";
   finePrint?: string;
   executiveProducer?: string;
@@ -95,6 +97,7 @@ export const films: Film[] = [
     starring: ["Roann Mesina", "Shannon Timberlake"],
     synopsis: "When a night of friendship, desire, and resentment erupts into violence, a young woman trapped inside her own imagination must face the truth before silence becomes fatal.",
     heroImage: summerJazzHeroImage,
+    mobileHeroImage: summerJazzMobileHeroImage,
     status: "library",
     previewUrl: "https://vimeo.com/1021491462",
   },

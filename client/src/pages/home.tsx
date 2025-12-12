@@ -103,7 +103,7 @@ export default function Home() {
             >
               <Link href={`/film/${film!.slug}`} className="block absolute inset-0">
                 <img 
-                  src={film!.heroImage} 
+                  src={film!.mobileHeroImage || film!.heroImage} 
                   alt={film!.title}
                   className="absolute inset-0 w-full h-full object-cover object-[center_35%] scale-[1.35]"
                 />
