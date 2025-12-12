@@ -82,7 +82,7 @@ export const films: Film[] = [
     director: "Chris Soriano",
     writer: "",
     starring: ["Chris Soriano", "Georgina Tolentino"],
-    synopsis: "",
+    synopsis: "A young Filipino sailor is confronted with the stark reality of racial tension aboard a Naval ship.",
     heroImage: masterChiefHeroImage,
     mobileHeroImage: masterChiefMobileHeroImage,
     status: "now-available",
