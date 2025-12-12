@@ -24,19 +24,19 @@ export default function Home() {
     <div className="min-h-screen bg-black">
       <Navigation />
       
-      <main>
+      <main className="relative">
         {orderedFilms.map((film, index) => (
           <Link href={`/film/${film!.slug}`} key={film!.slug}>
             <section 
               className={`relative w-full overflow-hidden cursor-pointer group ${
-                index === 0 ? 'pt-2 md:pt-0 md:h-screen' : 'md:h-[80vh]'
+                index === 0 ? 'pt-2 md:pt-0 md:min-h-screen' : 'md:h-[80vh]'
               }`}
               data-testid={`hero-section-${film!.slug}`}
             >
               <img 
                 src={film!.heroImage} 
                 alt={film!.title}
-                className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-auto md:absolute md:inset-0 md:w-full md:h-full md:object-cover md:object-top transition-transform duration-700 group-hover:scale-105"
               />
               <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
               <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
