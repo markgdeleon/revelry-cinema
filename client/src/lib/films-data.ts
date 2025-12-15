@@ -37,7 +37,7 @@ export const films: Film[] = [
   {
     slug: "lila-exe",
     title: "Lila.exe",
-    year: "Upcoming Film",
+    year: "In Development",
     releaseDate: "TBA",
     director: "Mark De Leon",
     writer: "Mark De Leon",
